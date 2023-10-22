@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --bg1: #151828;
+    --bg2: #1B1F34;
+    --body: #959DCC;
+    --brand: #FFAB76;
+    --white: #fff;
+}
+
+body{
+    font-family:"Inter",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color: var(--body);
+    line-height: 1.8;
+    background-color: var(--bg1);
+}
+#logo{
+    width: 6rem;
+}
+
+h1,h2,h3,h4,h5.h6{
+font-family: "Dela Gothic One",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: white;
+}
+
+a{
+    color: var(--body);
+    text-decoration: none;
+    
+}
+a:hover{
+    color: var(--brand);
+}
+
+.link-more{
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    left: 1px;
+    
+}
+
+.link-more .bi-arrow-right{
+    transition: all .4s ease;
+}
+.link-more:hover .bi-arrow-right {
+    transform: translateX(8px);
+}
+
+img{
+    width: 100%;
+}
+
+section{
+    padding-top: 160px;
+    padding-bottom: 160px;
+    position: relative;
+}
+
+/* ----------------------Intro---------------------- */
+.intro{
+    margin-bottom:60px;
+}
+
+.intro h1{
+    margin-top:16px;
+    margin-bottom:16px;
+}
+
+.intro h3{
+    color: var(--brand);
+}
+
+.intro p{
+    max-width: 500px;
+    margin: auto;
+}
+
+.cta-btns{
+    margin-top:60px ;
+}
+/* ----------------------Intro---------------------- */
+
+
+
+/* ----------------------NAVBAR---------------------- */
+.navbar{
+/* border: 2px solid white; */
+font-size: 20px;
+background: linear-gradient(to bottom,#1B1F34 ,rgba(27 , 31 , 52 , 0.2))  
+}
+
+.navbar .navbar-nav .nav-link.active {
+    color: var(--brand);
+}
+
+/* ----------------------/NAVBAR---------------------- */
+
+
+
+/* ----------------------Fsection---------------------- */
+#hero{
+background: linear-gradient(to right,#1B1F34 ,rgba(27 , 31 , 52 , 0.0)) ,url(../img/cover.webp);
+background-size: cover;
+background-position: center;
+min-height: 100vh;
+display: flex;
+text-align: center;
+}
+
+#hero h1{
+    margin-top: 75px;
+}
+
+
+#hero p{
+    margin-top: 34px;
+    margin-bottom: 24px;
+}
+
+/* ----------------------/Fsection---------------------- */
+
+/* ----------------------BTN---------------------- */
+.btn{
+padding: 16px 36px;
+font-family: "Dela Gothic One",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+transition: all .4s ease;
+border-radius: 0;
+}
+
+.btn-brand{
+    background-color: var(--brand);
+}
+
+.btn-brand:hover{
+    background-color: transparent;
+    color: var(--brand);
+    border-color: var(--brand);
+}
+
+.btn-outline-brand{
+    background-color: transparent;
+    color: var(--brand);
+    border-color: var(--brand); 
+    
+}
+
+.btn-outline-brand:hover{
+    background-color: var(--brand);
+}
+
+/* ----------------------/BTN---------------------- */
+
+/* ----------------------About---------------------- */
+
+#about{
+position: relative;
+}
+
+#about::after{
+content: "";
+width: 25%;
+height: 100%;
+background-color: var(--brand);
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+}
+
+#about h6{
+    color: var(--brand);
+    margin-bottom: 16px;
+}
+
+#about h1{
+    /* margin-top: 16px; */
+    margin-bottom: 24px;
+}
+
+#about .signature{
+    width:unset ;
+}
+
+/* ----------------------/About---------------------- */
+
+
+/* ----------------------Services---------------------- */
+#services{
+    background: var(--bg2);
+}
+
+#services .service .content{
+    padding: 32px;
+}
+
+#services .service p{
+margin-top:18px;
+margin-bottom: 18px;
+}
+/* ----------------------/Services---------------------- */
+
+
+/* ----------------------Features---------------------- */
+
+#features{
+    background-color: var(--bg1);
+    /* border: 1px solid var(--brand); */
+}
+
+.feature{
+display: flex;
+}
+
+.feature .icon-feature{
+    font-size: 36px;
+    color: var(--brand);
+    line-height:1 ;
+    margin-right: 16px;
+}
+
+.feature p{
+    font-size: 14px;
+    margin-top: 16px;
+    margin-bottom:16px;
+}
+
+.hidden-content {
+    display: none;
+  }
+  
+  .hidden-content.show {
+    display: block;
+  }
+  
+/* ----------------------/Features---------------------- */
+
+
+
+
+/* ----------------------------------------------  Teams Page  ---------------------------------------------- */
+
+
+/* ----------------------Social Icons---------------------- */
+
+.social-links a{
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover{
+    background-color: var(--brand);
+    color: var(--bg2);
+}
+
+/* ----------------------/Social Icons---------------------- */
+
+
+
+/* ----------------------Team---------------------- */
+
+#team{
+    background-color: var(--bg2);
+}
+
+.team-member{
+position: relative;
+background-color: var(--bg2);;
+}
+
+.team-member .social-links{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all .4s ease;
+    opacity: 0;
+}
+
+.team-member:hover .social-links{
+    opacity: 1;
+    top: 25px;
+
+}
+
+.test{
+    height: 17.3rem;
+}
+/* ----------------------/Team---------------------- */
+
+
+/* ----------------------------------------------  /Teams Page  ---------------------------------------------- */
+
+
+/* ----------------------------------------------  Review  ---------------------------------------------- */
+
+#reviews{
+    background-color: var(--bg2);
+}
+
+.review{
+    padding: 32px;
+    background-color: var(--bg1);
+    position: relative;
+}
+
+.review .icon{
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--brand);
+    color: var(--bg1);
+    border-radius: 100px;
+    position: absolute;
+    right: 32px;
+}
+
+.review img{
+    width: 60px;
+    border-radius: 100px;
+}
+
+
+/* ----------------------------------------------  Blog  ---------------------------------------------- */
+#blog{
+    background-color: var(--bg2);
+}
+
+.blog-post{
+    position: relative;
+}
+
+.blog-post .date{
+    width: 90px;
+    height: 90px;
+    background-color: var(--brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-post .day{
+    font-size: 32px;
+    line-height: 1;
+    font-family: "Dela Gothic One",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--bg1);
+}
+
+.blog-post .year{
+    color:var(--bg1);
+}  
+/* ----------------------------------------------  /Blog  ---------------------------------------------- */
+
+
+/* ----------------------------------------------  Booking  ---------------------------------------------- */
+#booking{
+    background: linear-gradient(to right,rgba(27, 31, 52, 0.8), rgba(27, 31, 52, 0.8)), url();
+    background-size:cover;
+    background-position: center;
+}
+
+#booking form{
+    background-color: var(--bg1);
+    padding: 32px;
+}
+
+#booking form .form-control{
+    background-color: var(--bg2);
+    border-radius: 0;
+    margin-top: 16px;
+    border-color: var(--bg2);
+    border: 2px solid var(--bg2);
+    color: var(--body);
+}
+
+#booking form input{
+    height: 58px;
+}
+
+#booking form input:focus{
+    box-shadow: none;
+    border-left-color:var(--brand);
+}
+
+
+/* ----------------------------------------------  /Booking  ---------------------------------------------- */
+
+
+/* ----------------------------------------------  Footer  ---------------------------------------------- */
+
+footer{
+    padding-top: 160px;
+}
+
+footer .social-links{
+    display: flex;
+}
+
+footer .social-links a{
+    margin-right: 5px;
+}
+
+.footer-top{
+    padding-bottom: 30px;
+}
+
+.footer-bottom{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid var(--bg2);
+}
+
+/* ----------------------------------------------  /Footer  ---------------------------------------------- */
+
+
+
+/* ----------------------------------------------  CONTACT US PAGE ---------------------------------------------- */
+
+/* Dark style for the contact form */
+.contact-form-container {
+    background-color: var(--bg1);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 50%;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid var(--bg2); /* Your brand color for the border */
+    background-color: transparent;
+    color: var(--body);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color:var(--body); /* Your brand color for the focus effect */
+}
+
+.submit-button {
+    background-color: var(--brand);
+    color: #000000;
+    font-family: "Dela Gothic One",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    padding: 10px 20px;
+    /* font-size: 1rem; */
+    cursor: pointer;
+    transition: all .4s ease;
+
+}
+
+.submit-button:hover {
+    background-color: transparent;
+    color: var(--brand);
+    border-color: var(--brand);
+}
+
+.submit-outline-brand{
+    background-color: transparent;
+    color: var(--brand);
+    border-color: var(--brand);    
+}
+
+.submit-outline-brand:hover{
+    background-color: var(--brand);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .contact-form-container {
+        padding: 10px;
+    }
+
+    
+    .form-input,
+    .form-textarea {
+        font-size: 0.9rem;
+    }
+}
+
+.cont{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* -----------Contact Info ----------- */
+
+/* Style for the contact information */
+.contact-info-container {
+    color: var(--body);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--brand);
+    width: 30%;
+    text-align: center;
+}
+
+.info-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.ic{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.test{
+    border: 2px solid rgb(142, 142, 142);
+    width: 35%;
+    background-image: url(../img/contact\ us.webp);
+    opacity: .8;
+}
+
+.test:hover{
+    opacity: 1;
+    transition: .5s;
+}
+
+#contact2{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--bg2);
+
+}
+
+iframe{
+    width: 60rem;
+    height: 30rem;
+}
+
+#h1_contact:hover{
+padding-left: .8rem;
+border: 5px solid wheat;
+}
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .contact-info-container {
+        padding: 10px;
+    }
+
+    .info-title {
+        font-size: 1.2rem;
+    }
+
+    .info-item {
+        font-size: 0.9rem;
+    }
+
+    .cont{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-form-container{
+        width: 100%;
+    }
+
+    .contact-info-container{
+        width: 100%;
+        
+    }
+}
+
+
+/* ----------------------------------------------  /CONTACT US PAGE ---------------------------------------------- */
+
+
+/* ----------------------------------------------  Registration ---------------------------------------------- */
+
+
+/* ------------ Sign Up ------------ */
+
+
+#a_back{
+    font-size: 1.5rem;
+}
+
+#a_back:hover{
+    transform: translateX(8px);
+    transition: all.4s ease;
+    padding-left: .8rem;
+    cursor: pointer;
+}
+
+.test3{
+    width: 35%;
+    background-image: url(../img/reg.jpg);
+    opacity: .8;
+    background-position: center;
+    background-size: cover ;
+    box-shadow:var(--brand) 0 0px 2px;
+}
+
+.test3:hover{
+    opacity: 1;
+    border: 2px solid rgb(142, 142, 142);
+    transition:.5s;
+}
+
+.signup_sec{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#logo_reg{
+    width: 6rem;
+}
+
+.test8{
+    /* border: 2px solid white; */
+    height: 2.5rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#h5_test:hover{
+    text-decoration: underline;
+    transition: .5s;
+    cursor: pointer;
+    
+}
+
+.test4{
+    width: 35%;
+    background-image: url(../img/login.jpg);
+    opacity: .8;
+    background-position: center;
+    background-size: cover ;
+    box-shadow:var(--brand) 0 0px 2px;
+}
+
+
+
+@media screen and (max-width: 768px){
+    .test8{
+     
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+/* ------------ Sign Up ------------ */
+
+/* ------------ log in ------------ */
+
+.Register{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ------------ /log in ------------ */
+
+
+/* ----------------------------------------------  Registration ---------------------------------------------- */
