@@ -11,10 +11,11 @@
             <input type="text" name="service_name" class="form-control" placeholder="service_name" value="{{ $service->service_name }}" readonly>
         </div>
         <div class="col mb-3">
-            <label class="form-label">image</label>
-            <input type="file" name="image_path" class="form-control" accept="image/*" placeholder="image" value="{{ $service->image_path }}" readonly>
+            <label class="form-label">Image</label>
+            <img src="{{ asset('storage/' . $service->image_path) }}" alt="Service Image" style="max-width: 100px; max-height: 100px;">                               
 
         </div>
+        
     </div>
     <div class="row">
         <div class="col mb-3">

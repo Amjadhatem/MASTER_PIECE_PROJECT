@@ -5,7 +5,7 @@
 @section('contents')
     <div class="d-flex align-items-center justify-content-between">
         <h1 class="mb-0">List Services</h1>
-        <a href="{{ route('services.create') }}" class="btn btn-primary">Add Product</a>
+        <a href="{{ route('services.create') }}" class="btn btn-primary">Add Service</a>
     </div>
     <hr />
     @if(Session::has('success'))
@@ -31,11 +31,7 @@
                         <td class="align-middle">{{ $loop->iteration }}</td>
                         <td class="align-middle">{{ $rs->service_name }}</td>
                         <td class="align-middle">
-                            @if(!empty($rs->image_path))
-                                <img src="{{ asset($rs->image_path) }}" alt="Service Image" style="max-width: 100px; max-height: 100px;">
-                            @else
-                                No image
-                            @endif
+                                <img src="{{ asset('storage/' . $rs->image_path) }}" alt="Service Image" style="max-width: 100px; max-height: 100px;">                               
                         </td>
                         <td class="align-middle">{{ $rs->service_bio }}</td>
                         <td class="align-middle">{{ $rs->service_description }}</td>  

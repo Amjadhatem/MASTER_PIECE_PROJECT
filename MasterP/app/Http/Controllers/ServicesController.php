@@ -30,53 +30,75 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        Services::create($request->all());
 
-        return redirect(route('services'))->with('success', 'Product added successfully');
+        $data = $request->validate([
+            'service_name' => 'required',
+            'service_description' => 'required',
+            'service_bio' => 'required',
+            'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for image uploads
+        ]);
+
+        if ($request->hasFile('image_path')) {
+            $imagePath = $request->file('image_path')->store('images', 'public');
+        } else {
+            $imagePath = null;
+        }
+
+        
+        $sp = Services::create([
+            'service_name' => $request->input('service_name'),
+            'image_path' => $imagePath,
+            'service_bio' => $request->input('service_bio'),
+            'service_description' => $request->input('service_description'),
+        ]);
+
+
+        return redirect(route('services'))->with('success', 'service added successfully');
 
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Services $services)
+    public function show(string $id)
     {
         $service = Services::findOrFail($id);
   
-        return view('services.show', compact('service'));
+        return view('crud.show', compact('service'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Services $services)
+    public function edit(string $id)
     {
         $service = Services::findOrFail($id);
   
-        return view('services.edit', compact('service'));
+        return view('crud.edit', compact('service'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Services $services)
+    public function update(Request $request, string $id)
     {
         $service = Services::findOrFail($id);
+        
   
         $service->update($request->all());
   
-        return redirect(route('services'))->with('success', 'product updated successfully');
+        return redirect(route('services'))->with('success', 'service updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Services $services)
+    public function destroy(string $id)
     {
         $service = Services::findOrFail($id);
   
         $service->delete();
   
-        return redirect(route('services'))->with('success', 'product deleted successfully');
+        return redirect(route('services'))->with('success', 'service deleted successfully');
     }
 }
