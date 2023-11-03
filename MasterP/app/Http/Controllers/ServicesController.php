@@ -82,12 +82,32 @@ class ServicesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $service = Services::findOrFail($id);
+        $service = Services::findOrFail($request->id);
         
+
+        if ($request->hasFile('image_path')) {
+            // dd($request->all());
+
+            $imagePath = $request->file('image_path')->store('images', 'public');
+            
+            $service->image_path = $imagePath;
+        }else {
+            $imagePath = null;
+        }
+        // $service->update($request->all());
   
-        $service->update($request->all());
-  
-        return redirect(route('services'))->with('success', 'service updated successfully');
+        // return redirect(route('services'))->with('success', 'service updated successfully');
+        $service->service_name = $request->input('service_name');   
+        $service->service_bio = $request->input('service_bio');
+        $service->service_description = $request->input('service_description');
+    
+        // Optional: You can add validation for the date here if needed
+    
+        // Save the changes to the database
+        $service->update();
+    
+        return redirect()->route('services')->with('success', 'Blog updated successfully');
+    
     }
 
     /**

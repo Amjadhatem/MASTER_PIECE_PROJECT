@@ -26,9 +26,9 @@
   </li>
   
   <li class="nav-item">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="{{ route('Blogs') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>#</span></a>
+      <span>Blogs</span></a>
   </li>
   
   <li class="nav-item">

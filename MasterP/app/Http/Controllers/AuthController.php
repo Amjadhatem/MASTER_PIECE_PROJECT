@@ -63,7 +63,7 @@ class AuthController extends Controller
   
         $request->session()->invalidate();
   
-        return redirect('auth.register');
+        return redirect('login');
     }
  
     public function profile()

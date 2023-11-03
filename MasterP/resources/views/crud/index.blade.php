@@ -6,6 +6,8 @@
     <div class="d-flex align-items-center justify-content-between">
         <h1 class="mb-0">List Services</h1>
         <a href="{{ route('services.create') }}" class="btn btn-primary">Add Service</a>
+        <a href="{{ route('logout') }}" class="btn btn-primary">Log out </a>
+
     </div>
     <hr />
     @if(Session::has('success'))
@@ -13,6 +15,7 @@
             {{ Session::get('success') }}
         </div>
     @endif
+    <div class="table-responsive" style="overflow-x: scroll;">
     <table class="table table-hover">
         <thead class="table-primary">
             <tr>
@@ -55,4 +58,5 @@
             @endif
         </tbody>
     </table>
+</div>
 @endsection

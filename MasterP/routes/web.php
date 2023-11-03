@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\BlogsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,6 +73,16 @@ use App\Http\Controllers\ServicesController;
             Route::get('edit/{id}', 'edit')->name('services.edit');
             Route::put('edit/{id}', 'update')->name('services.update');
             Route::delete('destroy/{id}', 'destroy')->name('services.destroy');
+        });
+
+        Route::controller(BlogsController::class)->prefix('Blogs')->group(function () {
+            Route::get('/', 'index')->name('Blogs');
+            Route::get('create', 'create')->name('Blogs.create');
+            Route::post('store', 'store')->name('Blogs.store');
+            Route::get('show/{blogs}', 'show')->name('Blogs.show');
+            Route::get('edit/{id}', 'edit')->name('Blogs.edit');
+            Route::put('edit/{id}', 'update')->name('Blogs.update');
+            Route::delete('destroy/{id}', 'destroy')->name('Blogs.destroy');
         });
 
         Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');

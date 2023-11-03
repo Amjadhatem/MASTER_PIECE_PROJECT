@@ -5,7 +5,7 @@
 @section('contents')
     <h1 class="mb-0">Edit Service</h1>
     <hr />
-    <form action="{{ route('services.update', $service->id) }}" method="POST">
+    <form action="{{ route('services.update', $service->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row">
@@ -15,8 +15,9 @@
             </div>
             <div class="col mb-3">
                 <label class="form-label">Image</label>
-                @if(!empty($service->image_path))
-                    <img src="{{ asset($service->image_path) }}" alt="Service Image" style="max-width: 300px; max-height: 200px;">
+                <input type="file" name="image_path" class="form-control" >
+                @if ($service->image_path)
+                    <img src="{{ asset('storage/' . $service->image_path) }}" alt="Blog Image" class="img-thumbnail" width="200">
                 @else
                     <p>No image uploaded</p>
                 @endif
