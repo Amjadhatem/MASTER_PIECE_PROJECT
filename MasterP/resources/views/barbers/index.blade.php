@@ -1,12 +1,12 @@
 @extends('include.app')
 
-@section('title', 'Home Blogs')
+@section('title', 'Home Team')
 
 @section('contents')
     <div class="d-flex align-items-center justify-content-between">
-        <h1 class="mb-0">List Blogs</h1>
+        <h1 class="mb-0">List Barbers</h1>
        
-             <a href="{{ route('Blogs.create') }}" class="btn btn-primary">Add Blog</a>
+             <a href="{{ route('Barbers.create') }}" class="btn btn-primary">Add Barber</a>
              <a href="{{ route('logout') }}" class="btn btn-primary">Log out </a>
            
     </div>      
@@ -21,31 +21,29 @@
             <thead class="table-primary">
                 <tr>
                     <th>#</th>
-                    <th>blog_title</th>
+                    <th>barber name</th>
                     <th>image</th>
-                    <th>blog_content</th>
-                    <th>blog_date</th>
-                    <th>complete_content</th>
+                    <th>phone Number</th>
+                    <th>barber_bio</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @if($Blog->count() > 0)
-                    @foreach($Blog as $item)
+                @if($barber->count() > 0)
+                    @foreach($barber as $bar)
                         <tr>
                             <td class="align-middle">{{ $loop->iteration }}</td>
-                            <td class="align-middle">{{ $item->blog_title }}</td>
+                            <td class="align-middle">{{ $bar->barber_name }}</td>
                             <td class="align-middle">
-                                <img src="{{ asset('storage/' . $item->image_path) }}" alt="Service Image" style="max-width: 100px; max-height: 100px;">                               
+                                <img src="{{ asset('storage/' . $bar->image_path) }}" alt="Service Image" style="max-width: 100px; max-height: 100px;">                               
                             </td>
-                            <td class="align-middle">{{ $item->blog_content }}</td>
-                            <td class="align-middle">{{ \Carbon\Carbon::parse($item->blog_date)->format('Y-m-d') }}</td>
-                            <td class="align-middle">{{ $item->complete_content }}</td>  
+                            <td class="align-middle">{{ $bar->phoneNumber }}</td>
+                            <td class="align-middle">{{ $bar->barber_bio }}</td>  
                             <td class="align-middle">
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="{{ route('Blogs.show', $item->id) }}" type="button" class="btn btn-secondary">Details</a>
-                                    <a href="{{ route('Blogs.edit', $item->id)}}" type="button" class="btn btn-warning">Edit</a>
-                                    <form action="{{ route('Blogs.destroy', $item->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                                    <a href="{{ route('Barbers.show', $bar->id) }}" type="button" class="btn btn-secondary">Details</a>
+                                    <a href="{{ route('Barbers.edit', $bar->id)}}" type="button" class="btn btn-warning">Edit</a>
+                                    <form action="{{ route('Barbers.destroy', $bar->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger m-0">Delete</button>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\BarbersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,6 +65,9 @@ use App\Http\Controllers\BlogsController;
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->name('dashboard');
+
+        // -----------------------------------
+
     
         Route::controller(ServicesController::class)->prefix('services')->group(function () {
             Route::get('/', 'index')->name('services');
@@ -75,15 +79,33 @@ use App\Http\Controllers\BlogsController;
             Route::delete('destroy/{id}', 'destroy')->name('services.destroy');
         });
 
+        // -----------------------------------------------------------------
+
         Route::controller(BlogsController::class)->prefix('Blogs')->group(function () {
             Route::get('/', 'index')->name('Blogs');
             Route::get('create', 'create')->name('Blogs.create');
             Route::post('store', 'store')->name('Blogs.store');
-            Route::get('show/{blogs}', 'show')->name('Blogs.show');
+            Route::get('show/{id}', 'show')->name('Blogs.show');
             Route::get('edit/{id}', 'edit')->name('Blogs.edit');
             Route::put('edit/{id}', 'update')->name('Blogs.update');
             Route::delete('destroy/{id}', 'destroy')->name('Blogs.destroy');
         });
+
+        // -----------------------------------------------------------------
+
+
+        Route::controller(BarbersController::class)->prefix('Barbers')->group(function () {
+            Route::get('/', 'index')->name('Barbers');
+            Route::get('create', 'create')->name('Barbers.create');
+            Route::post('store', 'store')->name('Barbers.store');
+            Route::get('show/{id}', 'show')->name('Barbers.show');
+            Route::get('edit/{id}', 'edit')->name('Barbers.edit');
+            Route::put('edit/{id}', 'update')->name('Barbers.update');
+            Route::delete('destroy/{id}', 'destroy')->name('Barbers.destroy');
+        });
+
+        // -----------------------------------------------------------------
+
 
         Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 
