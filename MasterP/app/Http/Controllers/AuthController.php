@@ -94,6 +94,71 @@ class AuthController extends Controller
     {
         return view('adminprofile');
     }
+
+    public function updateProfile(Request $request)
+{
+    $user = auth()->user();
+
+    $request->validate([
+        'name' => 'required',
+        'password' => 'nullable|min:6',  // You can adjust validation rules as needed
+    ]);
+
+    $data = [
+        'name' => $request->input('name'),
+    ];
+
+    // Only update the password if a new one is provided
+    if ($request->filled('password')) {
+        $data['password'] = Hash::make($request->input('password'));
+    }
+
+    $user->update($data);
+
+    return redirect()->route('dashboard')->with('success', 'Profile updated successfully');
+}
+
+
+    public function index()
+    {
+        $users = User::orderBy('created_at', 'DESC')->get();
+       
+        return view('crud_users.index' , compact('users'));
+    }
     
+    public function show(string $id)
+    {
+        $users = User::findOrFail($id);
+  
+        return view('crud_users.show', compact('users'));
+    }
+
+    public function edit(string $id)
+    {
+        $users = User::findOrFail($id);
+  
+        return view('crud_users.edit', compact('users'));
+    }
+  
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        $users = User::findOrFail($id);
+  
+        $users->update($request->all());
+  
+        return redirect(route('users'))->with('success', 'product updated successfully');
+    }
+
+    public function destroy(string $id)
+    {
+        $users = User::findOrFail($id);
+  
+        $users->delete();
+  
+        return redirect(route('users'))->with('success', 'product deleted successfully');
+    }
 
 }

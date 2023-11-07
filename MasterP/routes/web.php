@@ -62,6 +62,17 @@ use App\Http\Controllers\CustomersController;
 
         Route::get('homepage', 'displayhome')->name('homepage');
 
+        Route::get('/users', 'index')->name('users');
+        Route::get('show/{id}', 'show')->name('user.show');
+        Route::get('edit/{id}', 'edit')->name('user.edit');
+        Route::put('edit/{id}', 'update')->name('user.update');
+        Route::delete('destroy/{id}', 'destroy')->name('user.destroy');
+
+
+        Route::get('/profile','profile')->name('profile');
+        Route::put('/profile/update', 'updateProfile')->name('update-profile');
+
+
     });
       
     Route::middleware(['auth'])->group(function () {
@@ -109,10 +120,6 @@ use App\Http\Controllers\CustomersController;
             Route::delete('destroy/{id}', 'destroy')->name('Barbers.destroy');
         });
 
-        // -----------------------------------------------------------------
-
-
-        Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 
     // --------------------------/Auth------------------------
     

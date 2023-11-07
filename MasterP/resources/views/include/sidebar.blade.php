@@ -22,10 +22,11 @@
   <hr class="sidebar-divider my-0">
 
   <li class="nav-item">
-    <a class="nav-link" href="{{ route('services') }}">
-      <i class="fa-solid fa-scissors fa-rotate-90" style="color: #ffffff;"></i>
-      <span>Services</span></a>
+    <a class="nav-link" href="{{ route('users') }}">
+      <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+      <span>Users</span></a>
   </li>
+  
 
   <hr class="sidebar-divider my-0">
   
@@ -42,7 +43,15 @@
       <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
       <span>Barbers</span></a>
   </li>
+
+  <hr class="sidebar-divider my-0">
+
   
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('services') }}">
+      <i class="fa-solid fa-scissors fa-rotate-90" style="color: #ffffff;"></i>
+      <span>Services</span></a>
+  </li>
   
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
