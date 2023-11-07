@@ -13,31 +13,43 @@ class AuthController extends Controller
 {
     public function register()
     {
-        return view('auth/register');
+        return view('user/signUp');
+    }
+
+    public function displayhome()
+    {
+        return view('user/homepage');
     }
   
+
     public function registerSave(Request $request)
     {
         Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed' ,
+            'phoneNumber' => 'required|numeric|digits:10',
+
         ])->validate();
   
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'level' => 'Admin'
+            'phoneNumber' => $request->phoneNumber,
+
         ]);
   
         return redirect(route('login'));
+
     }
   
+
     public function login()
     {
-        return view('auth/login');
+        return view('user/logIn');
     }
+
   
     public function loginAction(Request $request)
     {
@@ -54,20 +66,34 @@ class AuthController extends Controller
   
         $request->session()->regenerate();
   
-        return redirect(route('dashboard'));
+        // return redirect(route('dashboard'));
+
+        $user = Auth::user();
+
+        // Check the 'role' of the user and redirect accordingly.
+        if ($user->role === 0) {
+            // Redirect regular users to the user dashboard.
+            return redirect(route('homepage'));
+        } elseif ($user->role === 1) {
+            // Redirect administrators to the admin dashboard.
+            return redirect(route('dashboard'));
+        }
     }
   
-    public function logout(Request $request)
-    {
-        Auth::guard('web')->logout();
+
+    // public function logout(Request $request)
+    // {
+    //     Auth::guard('web')->logout();
   
-        $request->session()->invalidate();
+    //     $request->session()->invalidate();
   
-        return redirect('login');
-    }
+    //     return redirect('login');
+    // }
  
     public function profile()
     {
         return view('adminprofile');
     }
+    
+
 }

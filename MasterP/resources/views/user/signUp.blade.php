@@ -1,65 +1,79 @@
-@extends('layouts.masterPage')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
-@section('title')
-    Log In 
-@endsection
+  <title>Document</title>
+
+  <style>
+    body{
+      /* border: 2px solid white; */
+      height: 40rem;
+      /* background-image: url('{{ asset('assets/img/dd.jpg') }}'); */
+background: linear-gradient(to right,#1B1F34 ,rgba(27 , 31 , 52 , 0.0)) ,url('{{ asset('assets/img/dd.jpg') }}');
+
+      background-position: center;
+      background-size: cover;
+      
+    }
+  </style>
+</head>
+<body>
+  
+<a href="/" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a>
 
 
-<!-- -------------------NAVBAR------------------- -->
-
-@section('nav')
-    
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <a href="/" id="a_back">Back</a>
-        
-    </div>
-  </nav>
-
-  @endsection
-
-  <!-- -------------------/NAVBAR------------------- -->
-
-  <section id="reg">
-
- <!-- -------------------content------------------- -->
-
- @section('content')
-     
- <div class="cont">
-
-    <div class="test3"></div>
+  <div class="test3"></div>
   
     <div class="contact-form-container">
       <div class="signup_sec">
-        <h1>Sign Up <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></h1> 
-    <img id="logo" src="{{ asset('assets/img/logo.png') }}" alt="logo"> 
+        <h1 style="margin: 0 auto">Sign up</h1> 
       </div>
         <br>
-        <form id="contactForm">
+        <form action="{{ route('register.save') }}" method="POST" id="contactForm" >
+          @csrf
+
+          <div class="input-group">
+            <input type="text" name="name" class="form-input @error('name')is-invalid @enderror" placeholder="Name">
+            @error('name')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                  @enderror
+        </div>
+
             <div class="input-group">
-                <input type="text" name="name" class="form-input" required placeholder="First Name">
-            </div>
-  
-            <div class="input-group">
-                <input type="text" name="name" class="form-input" required placeholder="Last Name">
-            </div>
-  
-            <div class="input-group">
-                <input type="email" name="email" class="form-input" required placeholder="Email">
+                <input type="email" name="email" class="form-input @error('email')is-invalid @enderror" placeholder="Email Address">
+                @error('email')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                  @enderror 
             </div>
             
             <div class="input-group">
-                <input type="password" name="password" class="form-input" required placeholder="Password">
+                <input type="password" name="password" class="form-input @error('password')is-invalid @enderror" placeholder="Password">
+                @error('password')
+                      <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="password_confirmation" class="form-input @error('password_confirmation')is-invalid @enderror" placeholder="Repeat Password">
+                @error('password_confirmation')
+                      <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
             </div>
   
             <div class="input-group">
-                <input type="tel" name="phone" class="form-input" placeholder="Phone">
+                <input type="text" name="phoneNumber" class="form-input @error('phoneNumber')is-invalid @enderror" placeholder="Phone Number">
+                @error('phoneNumber')
+                      <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
             </div>
   
             <div class="test8">
             <button type="submit" class="submit-button">Sign Up </button>
-            <a href="/Login"><h5 id="h5_test">I Have Already Accouunt</h5></a>
+            <a href="{{ route('login') }}"><h5 id="h5_test">Already have an account? Login!</h5></a>
           </div>
         </form>
     </div>
@@ -68,12 +82,7 @@
   </div>
    
 
-@endsection
- 
-<!-- -------------------/content------------------- -->
-
 </body>
+</html><div class="cont">
 
-<script src="https://kit.fontawesome.com/abdaddd2d7.js" crossorigin="anonymous"></script>
-
-</html>
+    

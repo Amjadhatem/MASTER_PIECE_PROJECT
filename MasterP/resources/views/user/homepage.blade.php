@@ -36,11 +36,17 @@
         <li class="nav-item">
           <a class="nav-link" href="#Blog">Blog</a>
         </li>
+        {{-- <li class="nav-item">
+          <a class="nav-link" href="#Blog"><i class="fa-solid fa-user" style="color: #ebe6e8;"></i></a>
+        </li> --}}
 
       </ul>
-      <a href="{{ route('login') }}" class="btn btn-outline-brand ms-lg-4">Log in</a>
+      {{-- <a href="/" class="btn btn-outline-brand ms-lg-4">Logout</a> --}}
+      {{-- <a href="#" class="btn btn-outline-brand ms-lg-4">Sign up</a> --}}
+      {{-- <a href="{{ route('logout') }}" class="btn btn-outline-brand ms-lg-4" onclick="performLogout()">Log out </a> --}}
+      <button onclick="performLogout()" class="btn btn-outline-brand ms-lg-4" >Logout</button>
 
-      <a href="{{ route('register') }}" class="btn btn-outline-brand ms-lg-4">Sign up</a>
+
     </div>
   </div>
 </nav>
@@ -58,7 +64,7 @@
         <div class="col-lg-6">
           <h1 class="display-3">Let your hair do the talking </h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
-          <a href="{{ route('login') }}" class="btn btn-brand">Book Now</a>
+          <a href="#booking" class="btn btn-brand">Book Now</a>
         </div>
       </div>
     </div>
@@ -426,6 +432,7 @@
 
 
 
+
   <!-- ---------------------Blog--------------------- -->
 
   <section id="Blog">
@@ -489,7 +496,7 @@
 
   <!-- ---------------------Booking--------------------- -->
 
-  {{-- <section id="booking">
+  <section id="booking">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -534,7 +541,7 @@
         </div>
       </div>
     </div>
-  </section> --}}
+  </section>
 
   <!-- ---------------------Booking--------------------- -->
 

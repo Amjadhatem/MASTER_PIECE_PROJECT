@@ -6,7 +6,9 @@
     <div class="d-flex align-items-center justify-content-between">
         <h1 class="mb-0">List Services</h1>
         <a href="{{ route('services.create') }}" class="btn btn-primary">Add Service</a>
-        <a href="{{ route('logout') }}" class="btn btn-primary">Log out </a>
+        {{-- <a href="{{ route('logout') }}" class="btn btn-primary">Log out </a> --}}
+        <button onclick="performLogout()" class="btn btn-primary" >Logout</button>
+
 
     </div>
     <hr />

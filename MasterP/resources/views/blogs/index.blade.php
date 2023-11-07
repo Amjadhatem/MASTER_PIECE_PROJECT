@@ -7,7 +7,9 @@
         <h1 class="mb-0">List Blogs</h1>
        
              <a href="{{ route('Blogs.create') }}" class="btn btn-primary">Add Blog</a>
-             <a href="{{ route('logout') }}" class="btn btn-primary">Log out </a>
+             {{-- <a href="{{ route('logout') }}" class="btn btn-primary">Log out </a> --}}
+            <button onclick="performLogout()" class="btn btn-primary" >Logout</button>
+
            
     </div>      
     <hr />

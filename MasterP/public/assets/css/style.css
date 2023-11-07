@@ -427,10 +427,15 @@ footer .social-links a{
 .contact-form-container {
     background-color: var(--bg1);
     color: #fff;
-    padding: 20px;
+    padding: 60px;
+    margin-top: 4rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 50%;
+    width: 30%;
+    opacity: .8;
+    margin-top: 10rem;
+    margin: 0 auto;
+    border: 1px solid white;
 }
 
 .form-input,
@@ -493,10 +498,13 @@ footer .social-links a{
     }
 }
 
-.cont{
-    display: flex;
-    justify-content: space-evenly;
-}
+/* .cont{
+    height: 80%;
+    background-image: url(../img/lifestyle-salon-nyc-coming-soon-5.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 2px solid white;
+} */
 
 /* -----------Contact Info ----------- */
 
@@ -643,14 +651,14 @@ border: 5px solid wheat;
     
 }
 
-.test4{
+/* .test4{
     width: 35%;
     background-image: url(../img/login.jpg);
     opacity: .8;
     background-position: center;
     background-size: cover ;
     box-shadow:var(--brand) 0 0px 2px;
-}
+} */
 
 
 

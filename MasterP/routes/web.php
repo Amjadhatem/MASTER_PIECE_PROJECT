@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\BarbersController;
+use App\Http\Controllers\CustomersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,16 +20,11 @@ use App\Http\Controllers\BarbersController;
         return view('user.welcome');
     });
     
+    
+
+    
     Route::get('/Team', function () {
         return view('user.team');
-    });
-    
-    Route::get('/Login', function () {
-        return view('user.logIn');
-    });
-    
-    Route::get('/SignUp', function () {
-        return view('user.signUp');
     });
     
     Route::get('/ContactUs', function () {
@@ -44,6 +40,10 @@ use App\Http\Controllers\BarbersController;
     Route::get('/services', function () {
         return view('adminservices');
     });
+
+    //////////////////////////////////////////////////////////////////
+
+
     
     /////////////////////////////////////////////////
     
@@ -58,13 +58,18 @@ use App\Http\Controllers\BarbersController;
         Route::get('login', 'login')->name('login');
         Route::post('login', 'loginAction')->name('login.action');
       
-        Route::get('logout', 'logout')->middleware('auth')->name('logout');
+        // Route::get('logout', 'logout')->middleware('auth')->name('logout');
+
+        Route::get('homepage', 'displayhome')->name('homepage');
+
     });
       
     Route::middleware(['auth'])->group(function () {
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->name('dashboard');
+    
+    
 
         // -----------------------------------
 

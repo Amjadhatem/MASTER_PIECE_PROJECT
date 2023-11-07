@@ -57,6 +57,13 @@
                       <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                   </div>
+
+                  <div class="form-group">
+                    <input name="phoneNumber" type="text" class="form-control form-control-user @error('phoneNumber')is-invalid @enderror" id="exampleInputName" placeholder="phoneNumber">
+                    @error('phoneNumber')
+                      <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                  </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block">Register Account</button>
               </form>

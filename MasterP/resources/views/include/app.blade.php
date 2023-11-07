@@ -78,5 +78,15 @@
   <script src="{{ asset('admin_assets/js/sb-admin-2.min.js') }}"></script>
   <!-- Page level plugins -->
   <script src="{{ asset('admin_assets/vendor/chart.js/Chart.min.js') }}"></script>
+
+  <script>
+    function performLogout() {
+        // Perform the logout action (e.g., making an API request or clearing session)
+        // ...
+    
+        // Clear browser history and redirect to the login page
+        window.location.replace('/login'); // Replace the current page in the history
+    }
+    </script>
 </body>
 </html>
