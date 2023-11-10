@@ -64,7 +64,7 @@
         <div class="col-lg-6">
           <h1 class="display-3">Let your hair do the talking </h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
-          <a href="#booking" class="btn btn-brand">Book Now</a>
+          <a href="/appointment" class="btn btn-brand">Book Now</a>
         </div>
       </div>
     </div>
@@ -496,7 +496,7 @@
 
   <!-- ---------------------Booking--------------------- -->
 
-  <section id="booking">
+  {{-- <section id="booking">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -541,7 +541,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!-- ---------------------Booking--------------------- -->
 

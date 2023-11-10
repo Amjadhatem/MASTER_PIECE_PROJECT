@@ -104,54 +104,30 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-md-6">
 
-          <div class="service">
-            <img src="{{ asset('assets/img/service_1.jpg') }}" alt="Service 1">
-            <div class="content">
-
-              <h3 class="h5">Haircuts</h3>
-              <p>Our expert stylists can give you the perfect haircut to suit your style.</p>
-              <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i> </a>
-              <div class="hidden-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur itaque vel, voluptate illo sapiente expedita ipsam ut repellat quod animi, optio enim ullam tenetur corrupti aliquam maiores earum tempore magnam!</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        @foreach ($service as $ser)
 
         <div class="col-lg-4 col-md-6">
 
           <div class="service">
-            <img src="{{ asset('assets/img/service_2.jpg') }}" alt="Service 2">
+            <img src="{{ asset('storage/' . $ser->image_path) }}" alt="Service 1">
             <div class="content">
 
-              <h3 class="h5">Shaves</h3>
-              <p> Experience a traditional hot towel shave for a smooth and refreshing shave.</p>
+              {{-- <h3 class="h5">Haircuts</h3> --}}
+              <h3 class="h5">{{ $ser->service_name }}</h3>
+              {{-- <p>Our expert stylists can give you the perfect haircut to suit your style.</p> --}}
+              <p>{{ $ser->service_bio }}</p>
+              
               <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i> </a>
               <div class="hidden-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur itaque vel, voluptate illo sapiente expedita ipsam ut repellat quod animi, optio enim ullam tenetur corrupti aliquam maiores earum tempore magnam!</p>
+                {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur itaque vel, voluptate illo sapiente expedita ipsam ut repellat quod animi, optio enim ullam tenetur corrupti aliquam maiores earum tempore magnam!</p> --}}
+                <p>{{ $ser->service_description }}</p>
               </div>
             </div>
           </div>
         </div>
+        @endforeach
 
-        <div class="col-lg-4 col-md-6">
-
-          <div class="service">
-            <img src="{{ asset('assets/img/service_3.jpg') }}" alt="Service 3">
-            <div class="content">
-
-              <h3 class="h5">Hairstyling</h3>
-              <p>Get the perfect hairstyle for any occasion, from elegant updos to casual beachy waves.
-              </p>
-              <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i> </a>
-              <div class="hidden-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur itaque vel, voluptate illo sapiente expedita ipsam ut repellat quod animi, optio enim ullam tenetur corrupti aliquam maiores earum tempore magnam!</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="cta-btns">
         <a href="#booking" class="btn btn-brand me-sm-2">Appointment</a>

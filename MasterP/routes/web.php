@@ -23,8 +23,8 @@ use App\Http\Controllers\CustomersController;
     
 
     
-    Route::get('/Team', function () {
-        return view('user.team');
+    Route::get('/appointment', function () {
+        return view('user.appointment');
     });
     
     Route::get('/ContactUs', function () {
@@ -85,15 +85,19 @@ use App\Http\Controllers\CustomersController;
         // -----------------------------------
 
     
-        Route::controller(ServicesController::class)->prefix('services')->group(function () {
-            Route::get('/', 'index')->name('services');
-            Route::get('create', 'create')->name('services.create');
-            Route::post('store', 'store')->name('services.store');
-            Route::get('show/{id}', 'show')->name('services.show');
-            Route::get('edit/{id}', 'edit')->name('services.edit');
-            Route::put('edit/{id}', 'update')->name('services.update');
-            Route::delete('destroy/{id}', 'destroy')->name('services.destroy');
-        });
+            Route::controller(ServicesController::class)->prefix('services')->group(function () {
+                Route::get('/', 'index')->name('services');
+                Route::get('create', 'create')->name('services.create');
+                Route::post('store', 'store')->name('services.store');
+                Route::get('show/{id}', 'show')->name('services.show');
+                Route::get('edit/{id}', 'edit')->name('services.edit');
+                Route::put('edit/{id}', 'update')->name('services.update');
+                Route::delete('destroy/{id}', 'destroy')->name('services.destroy');
+                // Route::get('/services','displayServices')->name('welcome.services');
+
+            });
+
+            Route::get('/', [ServicesController::class, 'displayServices'])->name('welcome.services');
 
         // -----------------------------------------------------------------
 
