@@ -34,7 +34,7 @@ class BarbersController extends Controller
         
         $data = $request->validate([
             'barber_name' => 'required',
-            'phoneNumber' => 'required|integer',
+            'phoneNumber' => 'required|numeric|digits:10',
             'barber_bio' => 'required',
             'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for image uploads
         ]);

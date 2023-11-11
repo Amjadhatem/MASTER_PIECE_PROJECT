@@ -122,9 +122,5 @@ class ServicesController extends Controller
         return redirect(route('services'))->with('success', 'service deleted successfully');
     }
 
-    public function displayServices()
-    {
-        $service = Services::orderBy('created_at', 'DESC')->get();
-        return view('user.welcome', compact('service'));
-    }
+       
 }

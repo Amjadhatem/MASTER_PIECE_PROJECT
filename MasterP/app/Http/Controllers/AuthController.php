@@ -16,10 +16,10 @@ class AuthController extends Controller
         return view('user/signUp');
     }
 
-    public function displayhome()
-    {
-        return view('user/homepage');
-    }
+    // public function displayhome()
+    // {
+    //     return view('user/homepage');
+    // }
   
 
     public function registerSave(Request $request)
@@ -92,8 +92,15 @@ class AuthController extends Controller
  
     public function profile()
     {
-        return view('adminprofile');
-    }
+        $user = auth()->user();
+
+        // Check if the user has the required role (assuming 1 corresponds to "Roll No. 1")
+        if ($user->role == 1) {
+            return view('adminprofile');
+        } else {
+            return redirect()->route('dashboard')->with('error', 'You do not have permission to view this page.');
+        }
+        }
 
     public function updateProfile(Request $request)
 {

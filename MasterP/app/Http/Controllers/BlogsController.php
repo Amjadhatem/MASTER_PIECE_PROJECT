@@ -136,4 +136,6 @@ class BlogsController extends Controller
   
         return redirect(route('Blogs'))->with('success', 'service deleted successfully');
     }
+    
+   
 }

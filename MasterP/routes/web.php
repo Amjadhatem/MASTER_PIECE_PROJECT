@@ -6,6 +6,7 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\BarbersController;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\Displaydata;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +20,6 @@ use App\Http\Controllers\CustomersController;
     Route::get('/', function () {
         return view('user.welcome');
     });
-    
-    
-
     
     Route::get('/appointment', function () {
         return view('user.appointment');
@@ -60,7 +58,7 @@ use App\Http\Controllers\CustomersController;
       
         // Route::get('logout', 'logout')->middleware('auth')->name('logout');
 
-        Route::get('homepage', 'displayhome')->name('homepage');
+        // Route::get('homepage', 'displayhome')->name('homepage');
 
         Route::get('/users', 'index')->name('users');
         Route::get('show/{id}', 'show')->name('user.show');
@@ -97,7 +95,6 @@ use App\Http\Controllers\CustomersController;
 
             });
 
-            Route::get('/', [ServicesController::class, 'displayServices'])->name('welcome.services');
 
         // -----------------------------------------------------------------
 
@@ -127,4 +124,9 @@ use App\Http\Controllers\CustomersController;
 
     // --------------------------/Auth------------------------
     
+    
 });
+
+
+Route::get('/', [Displaydata::class, 'displayda']);
+Route::get('homepage', [Displaydata::class, 'displayho'])->name('homepage');

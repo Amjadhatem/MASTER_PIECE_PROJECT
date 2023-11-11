@@ -57,7 +57,7 @@
       <div class="row">
         <div class="col-lg-6">
           <h1 class="display-3">Let your hair do the talking </h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+          <p>"Welcome to [A.1 BarberShop], where style meets precision. Step into our world of expert barbers, creating personalized looks that redefine your confidence with every cut."</p>
           <a href="{{ route('login') }}" class="btn btn-brand">Book Now</a>
         </div>
       </div>
@@ -79,8 +79,7 @@
         <div class="col-lg-4 offset-lg-1">
           <h3>About Us</h3>
           <h1>About Amjad Salon</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+          <p>"At A.1 BarberShop, we are more than just a barbershop — we're a haven for style and self-expression. With a team of skilled artisans passionate about their craft, we strive to create an inclusive space where every haircut is a masterpiece, and every client leaves feeling confident and refreshed. Discover the artistry, precision, and warmth that define the essence of A.1 BarberShop."</p>
           <img class="signature" src="./img/signature.png" alt="">
 
         </div>
@@ -100,7 +99,7 @@
         <div class="col-12 intro">
           <h3>Services</h3>
           <h1>What We Provide?</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+          <p>"our skilled barbers blend creativity with precision, delivering personalized grooming experiences tailored to each client's style. Step into our welcoming space, where passion and expertise meet to redefine your look with every visit."</p>
         </div>
       </div>
       <div class="row">
@@ -112,16 +111,12 @@
           <div class="service">
             <img src="{{ asset('storage/' . $ser->image_path) }}" alt="Service 1">
             <div class="content">
-
-              {{-- <h3 class="h5">Haircuts</h3> --}}
               <h3 class="h5">{{ $ser->service_name }}</h3>
-              {{-- <p>Our expert stylists can give you the perfect haircut to suit your style.</p> --}}
               <p>{{ $ser->service_bio }}</p>
               
               <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i> </a>
               <div class="hidden-content">
-                {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur itaque vel, voluptate illo sapiente expedita ipsam ut repellat quod animi, optio enim ullam tenetur corrupti aliquam maiores earum tempore magnam!</p> --}}
-                <p>{{ $ser->service_description }}</p>
+               <p>{{ $ser->service_description }}</p>
               </div>
             </div>
           </div>
@@ -135,7 +130,7 @@
 
       </div>
     </div>
-  </section>
+  </section> 
 
   <!-- ---------------------/Services--------------------- -->
 
@@ -240,106 +235,6 @@
 
 
 
-  <!-- ----------------------Reviews--------------------- -->
-{{-- 
-  <section id="reviews">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 intro text-center">
-          <h6>Reviews</h6>
-          <h1>Listen to our customers</h1>
-          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
-            alteration in some form, by injected humour, or randomised word which
-          </p>
-        </div>
-      </div>
-
-      
-      <div class="row gy-4" >
-        <div class="col-lg-4 col-md-6">
-           <div class="review">
-               <div class="d-flex">
-               <img src="{{ asset('assets/img/user icon.png') }}" alt="User Icon">
-               <div class="ms-3">
-               <h5>User name</h5>
-               <small>@Usermail</small>
-          </div>
-            <div class="icon"><i class="bi bi-twitter"></i></div>
-            </div>
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi voluptatem qui aliquam, sit sequi numquam recusandae accusantium distinctio repellat possimus incidunt in, at asperiores culpa saepe hic blanditiis quisquam!</p>
-      </div>
-    </div>
-        <div class="col-lg-4 col-md-6">
-           <div class="review">
-               <div class="d-flex">
-                <img src="{{ asset('assets/img/user icon.png') }}" alt="User Icon">
-               <div class="ms-3">
-               <h5>User name</h5>
-               <small>@Usermail</small>
-          </div>
-            <div class="icon"><i class="bi bi-twitter"></i></div>
-            </div>
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi voluptatem qui aliquam, sit sequi numquam recusandae accusantium distinctio repellat possimus incidunt in, at asperiores culpa saepe hic blanditiis quisquam!</p>
-      </div>
-    </div>
-        <div class="col-lg-4 col-md-6">
-           <div class="review">
-               <div class="d-flex">
-                <img src="{{ asset('assets/img/user icon.png') }}" alt="User Icon">
-               <div class="ms-3">
-               <h5>User name</h5>
-               <small>@Usermail</small>
-          </div>
-            <div class="icon"><i class="bi bi-twitter"></i></div>
-            </div>
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi voluptatem qui aliquam, sit sequi numquam recusandae accusantium distinctio repellat possimus incidunt in, at asperiores culpa saepe hic blanditiis quisquam!</p>
-      </div>
-    </div>
-        <div class="col-lg-4 col-md-6">
-           <div class="review">
-               <div class="d-flex">
-                <img src="{{ asset('assets/img/user icon.png') }}" alt="User Icon">
-               <div class="ms-3">
-               <h5>User name</h5>
-               <small>@Usermail</small>
-          </div>
-            <div class="icon"><i class="bi bi-twitter"></i></div>
-            </div>
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi voluptatem qui aliquam, sit sequi numquam recusandae accusantium distinctio repellat possimus incidunt in, at asperiores culpa saepe hic blanditiis quisquam!</p>
-      </div>
-    </div>
-        <div class="col-lg-4 col-md-6">
-           <div class="review">
-               <div class="d-flex">
-                <img src="{{ asset('assets/img/user icon.png') }}" alt="User Icon">
-               <div class="ms-3">
-               <h5>User name</h5>
-               <small>@Usermail</small>
-          </div>
-            <div class="icon"><i class="bi bi-twitter"></i></div>
-            </div>
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi voluptatem qui aliquam, sit sequi numquam recusandae accusantium distinctio repellat possimus incidunt in, at asperiores culpa saepe hic blanditiis quisquam!</p>
-      </div>
-    </div>
-        <div class="col-lg-4 col-md-6">
-           <div class="review">
-               <div class="d-flex">
-                <img src="{{ asset('assets/img/user icon.png') }}" alt="User Icon">
-               <div class="ms-3">
-               <h5>User name</h5>
-               <small>@Usermail</small>
-          </div>
-            <div class="icon"><i class="bi bi-twitter"></i></div>
-            </div>
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi voluptatem qui aliquam, sit sequi numquam recusandae accusantium distinctio repellat possimus incidunt in, at asperiores culpa saepe hic blanditiis quisquam!</p>
-      </div>
-    </div>
-    </div>
-  </section>
-   --}}
-  <!-- ---------------------/Reviews--------------------- -->
-
-
   <!-- ---------------------Team--------------------- -->
 
   <section id="Team">
@@ -348,53 +243,31 @@
         <div class="col-12 intro  text-center">
           <h3>Team</h3>
           <h1>Meet Our Crew Members</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+          <p>"our skilled barbers blend creativity with precision, delivering personalized grooming experiences tailored to each client's style. Step into our welcoming space, where passion and expertise meet to redefine your look with every visit."</p>
         </div>
       </div>
      
       <div class="row text-center">
+
+        @foreach($barber as $bar)
+
         <div class="col-lg-4 col-md-6">
             <div class="team-member">
             
-            <img src="{{ asset('assets/img/barber 1.webp') }}" alt="barber 1">
+            <img src="{{ asset('storage/' . $bar->image_path) }}" alt="barber 1">
                 <div class="social-links">
                     <a href="#"><i class="bi bi-facebook"></i></a>
                     <a href="#"><i class="bi bi-instagram"></i></a>
                     <a href="#"><i class="bi bi-twitter"></i></a>
                 </div>
-                <h5 class="mt-4">Wade Warren</h5>
-                <small>Hair Cutter</small>
+                <h5 class="mt-4">{{ $bar->barber_name }}</h5>
+                <small>{{ $bar->barber_bio }}</small>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="team-member">
-            <img src="{{ asset('assets/img/barber2.webp') }}" alt="barber2">
+        
+        @endforeach
 
-                <div class="social-links">
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                </div>
-                <h5 class="mt-4">Wade Warren</h5>
-                <small>Hair Cutter</small>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="team-member">
-              <img src="{{ asset('assets/img/barber 4.jpg') }}" alt="barber2">
-                <div class="social-links">
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                </div>
-                <h5 class="mt-4">Wade Warren</h5>
-                <small>Hair Cutter</small>
-            </div>
-        </div>
       </div>
-
-
-      
     </div>
   </section>
   
@@ -417,44 +290,29 @@
       </div>
 
       <div class="row">
+
+        @foreach($Blog as $blog)
+
          <div class="col-lg-6 col-md-6">
           <article class="blog-post">
 
-            <img id="bloge1" src="{{ asset('assets/img/blog1.jpg') }}" alt="">
+            <img id="bloge1" src="{{ asset('storage/' . $blog->image_path) }}" alt="">
             <div class="date">
               <div>
-                  <div class="day">12</div>
-                  <div class="year">sep, 2023</div>
+                <div class="day">{{ \Carbon\Carbon::parse($blog->blog_date)->format('d') }}</div>
+                <div class="year">{{ \Carbon\Carbon::parse($blog->blog_date)->format('M, Y') }}</div>  
+      
               </div>
             </div>
-            <h4 class="mt-5">2026 Men's hair terends everywhere</h4>
-            <p class="my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi deleniti omnis reiciendis sapiente enim temporibus nesciunt placeat, quae hic perferendis! Voluptatem error eos asperiores voluptate hic dolores molestias quia non!</p>
-            <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i></a>
-          <div class="hidden-content">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis dignissimos architecto totam. Sint eum quae placeat ullam assumenda. Natus quas maxime ipsum consequuntur, quod inventore a ad facere? Rerum, facere?</p>
+            <h4 class="mt-5">{{ $blog->blog_title }}</h4>
+            <p class="my-3">{{ $blog->blog_content }}</p>
+            <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i> </a>
+            <div class="hidden-content">
+              <p>{{ $blog->complete_content }}</p>
           </div>
-
           </article>
          </div>
-
-         <div class="col-lg-6 col-md-6">
-          <article class="blog-post">
-
-            <img src="{{ asset('assets/img/blog2.jpg') }}" alt="">
-            <div class="date">
-              <div>
-                  <div class="day">12</div>
-                  <div class="year">sep, 2023</div>
-              </div>
-            </div>
-            <h4 class="mt-5">2026 Men's hair terends everywhere</h4>
-            <p class="my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi deleniti omnis reiciendis sapiente enim temporibus nesciunt placeat, quae hic perferendis! Voluptatem error eos asperiores voluptate hic dolores molestias quia non!</p>
-            <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i></a>
-          <div class="hidden-content">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis dignissimos architecto totam. Sint eum quae placeat ullam assumenda. Natus quas maxime ipsum consequuntur, quod inventore a ad facere? Rerum, facere?</p>
-          </div>
-
-          </article>
+         @endforeach
          </div>
       </div>
   </section>

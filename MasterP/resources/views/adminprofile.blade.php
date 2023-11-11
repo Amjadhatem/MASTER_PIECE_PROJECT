@@ -5,6 +5,9 @@
 @section('contents')
     <h1 class="mb-0">Profile</h1>
     <hr />
+
+    @if(auth()->user()->role == 1)
+
  
     <form method="POST" enctype="multipart/form-data" id="profile_setup_frm" action="{{ route('update-profile') }}" >
         @csrf
@@ -45,4 +48,8 @@
     </div>   
             
         </form>
+
+        @else
+        <p>You do not have permission to view this page.</p>
+    @endif
 @endsection
