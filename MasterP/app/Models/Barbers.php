@@ -14,4 +14,9 @@ class Barbers extends Model
         'phoneNumber',
         'barber_bio',
     ];
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

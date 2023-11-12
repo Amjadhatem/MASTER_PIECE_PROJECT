@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\BarbersController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\Displaydata;
+use App\Http\Controllers\ReservationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +22,9 @@ use App\Http\Controllers\Displaydata;
         return view('user.welcome');
     });
     
-    Route::get('/appointment', function () {
-        return view('user.appointment');
-    });
+    // Route::get('/appointment', function () {
+    //     return view('user.appointment');
+    // });
     
     Route::get('/ContactUs', function () {
         return view('user.ContactUs');
@@ -124,6 +125,19 @@ use App\Http\Controllers\Displaydata;
 
     // --------------------------/Auth------------------------
     
+    Route::controller(ReservationController::class)->prefix('Rese')->group(function () {
+        Route::get('/Reservation', 'index')->name('Rese');
+        Route::get('create', 'create')->name('book.appointment');
+        Route::post('store', 'store')->name('reservations.store');
+    });
+    // Route::get('/appointment', [ReservationController::class, 'create'])->name('book.appointment');
+
+// Route for processing the submitted reservation form
+    // Route::post('/book-appointment', [ReservationController::class, 'store'])->name('reservations.store');
+
+    Route::get('/success', function () {
+        return view('user.success');
+    })->name('success.page');
     
 });
 

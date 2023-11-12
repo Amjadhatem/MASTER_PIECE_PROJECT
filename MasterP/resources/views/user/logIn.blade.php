@@ -31,7 +31,7 @@ background: linear-gradient(to right,#1B1F34 ,rgba(27 , 31 , 52 , 0.0)) ,url('{{
   </nav>
 
 </header> --}}
-<a href="/" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a> 
+  <a href="/" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a> 
 
   <div class="cont">
 
