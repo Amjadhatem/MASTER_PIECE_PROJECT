@@ -21,6 +21,9 @@ return new class extends Migration
             $table->text('additional_information')->nullable();
             $table->timestamps();
 
+            $table->unique(['date', 'time']);
+
+
             // $table->foreign('barbers_id')->references('id')->on('barbers')->onDelete('cascade');
         });
 

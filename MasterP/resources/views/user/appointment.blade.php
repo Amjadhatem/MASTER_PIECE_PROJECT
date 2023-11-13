@@ -26,6 +26,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
+          @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                                <li>{{ $errorMessage }}</li>
+                            </ul>
+                        </div>
+                    @endif
           <form action="{{ route('reservations.store') }}" method="post" class="row">
             @csrf
             <div class="col-12 mb-4">
@@ -38,13 +48,20 @@
             <div class="form-froup col-12">
               <input type="text" name="phone_number" class="form-control" placeholder="phone number">
             </div>
-            <div class="form-froup col-12">
-              <!-- <input type="datetime" class="form-control" placeholder="DD/MM/YYY"> -->
-              <input type="date" name="date" id="datePicker" class="form-control" placeholder="DD/MM/YYY">
+            <div class="form-group col-12">
+              <input type="date" name="date" id="datePicker" class="form-control" placeholder="DD/MM/YYYY" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" max="{{ Carbon\Carbon::now()->addDays(7)->format('Y-m-d') }}">
             </div>
             <div class="form-group col-6">
-              <input type="time" name="time" id="appointmentTime" class="form-control" placeholder="Time">
-            </div>
+                            <input type="time" name="time" id="appointmentTime" class="form-control"
+                                placeholder="Time" @if(isset($reservedTimes)) list="reservedTimes" @endif>
+                            @if(isset($reservedTimes))
+                                <datalist id="reservedTimes">
+                                    @foreach($reservedTimes as $time)
+                                        <option value="{{ $time }}">
+                                    @endforeach
+                                </datalist>
+                            @endif
+                        </div>
             <div class="form-group col-12">
               <select name="barber_id" id="barberSelect" class="form-control" placeholder="barber_id">
                 <option disabled selected>Select Barber</option>
