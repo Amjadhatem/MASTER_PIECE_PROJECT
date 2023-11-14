@@ -37,14 +37,16 @@ class ReservationController extends Controller
         })
         ->toArray();
 
-        $reservedTimes = Reservation::whereIn('date', $availableDates)
-        ->pluck('time')
-        ->toArray();
-
+         // Fetch reserved times for the selected date
+    $reservedTimes = [];
+    $selectedDate = Carbon::now()->format('Y-m-d');
+    if (in_array($selectedDate, $availableDates)) {
+        $reservedTimes = Reservation::where('date', $selectedDate)->pluck('time')->toArray();
+    }
         $errorMessage = '';
 
 
-        return view('user.appointment', compact('barber','availableDates', 'reservedTimes', 'errorMessage'));
+        return view('user.appointment', compact('barber', 'availableDates', 'reservedTimes', 'errorMessage'));
     }
 
     /**
@@ -52,8 +54,6 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-            // Validate the incoming data
-            try {
                 // Validate the incoming data
                 $data = $request->validate([
                     'name' => 'required|string',
@@ -88,11 +88,7 @@ class ReservationController extends Controller
                 ]);
         
                 return redirect()->route('success.page');
-            } catch (ValidationException $e) {
-                // Handle the validation exception
-                $errorMessage = 'The selected time is already reserved. Please choose another time.';
-                return redirect()->back()->withErrors([$e->errors(), $errorMessage])->withInput();
-            }
+           
 
             
            

@@ -18,7 +18,7 @@
                 </div>
 
                 <div style="text-align: center">
-                    <a href="/" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.2rem "  alt=""></a> 
+                    <a href="{{ route('homepage') }}" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.2rem "  alt=""></a> 
                 </div>
             </div>
         </div>

@@ -52,16 +52,22 @@
               <input type="date" name="date" id="datePicker" class="form-control" placeholder="DD/MM/YYYY" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" max="{{ Carbon\Carbon::now()->addDays(7)->format('Y-m-d') }}">
             </div>
             <div class="form-group col-6">
-                            <input type="time" name="time" id="appointmentTime" class="form-control"
-                                placeholder="Time" @if(isset($reservedTimes)) list="reservedTimes" @endif>
-                            @if(isset($reservedTimes))
-                                <datalist id="reservedTimes">
-                                    @foreach($reservedTimes as $time)
-                                        <option value="{{ $time }}">
-                                    @endforeach
-                                </datalist>
-                            @endif
-                        </div>
+              <select name="time" id="appointmentHour" class="form-control">
+                  @for ($i = 1; $i <= 12; $i++)
+                      @php $time = $i; $formattedTime = $i.' AM'; @endphp
+                      @if (!in_array($time, $reservedTimes))
+                          <option value="{{ $time }}">{{ $formattedTime }}</option>
+                      @endif
+                  @endfor
+          
+                  @for ($i = 1; $i <= 12; $i++)
+                      @php $time = $i + 12; $formattedTime = $i.' PM'; @endphp
+                      @if (!in_array($time, $reservedTimes))
+                          <option value="{{ $time }}">{{ $formattedTime }}</option>
+                      @endif
+                  @endfor
+              </select>
+          </div>
             <div class="form-group col-12">
               <select name="barber_id" id="barberSelect" class="form-control" placeholder="barber_id">
                 <option disabled selected>Select Barber</option>
