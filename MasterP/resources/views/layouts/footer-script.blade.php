@@ -21,3 +21,42 @@
     }
     </script>
     
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Set interval to change slide every 4 seconds
+        setInterval(function () {
+            changeSlide(1);
+        }, 4000);
+
+        function changeSlide(n) {
+            showSlides((slideIndex += n));
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.opacity = 0;
+
+            // Trigger reflow
+            slides[slideIndex - 1].offsetHeight;
+
+            slides[slideIndex - 1].style.opacity = 1;
+        }
+    </script>
+    

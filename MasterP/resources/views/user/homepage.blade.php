@@ -86,7 +86,7 @@
           <h3>About Us</h3>
           <h1>About A.1 BarberShop</h1>
           <p>"At A.1 BarberShop, we are more than just a barbershop — we're a haven for style and self-expression. With a team of skilled artisans passionate about their craft, we strive to create an inclusive space where every haircut is a masterpiece, and every client leaves feeling confident and refreshed. Discover the artistry, precision, and warmth that define the essence of A.1 BarberShop."</p>
-          <img class="signature" src="./img/signature.png" alt="">
+          <img class="signature" src="./img/signature.png" alt="AboutUs">
 
         </div>
       </div>
@@ -131,7 +131,7 @@
 
       </div>
       <div class="cta-btns">
-        <a href="#booking" class="btn btn-brand me-sm-2">Appointment</a>
+        <a href="{{ route('book.appointment') }}" class="btn btn-brand me-sm-2">Appointment</a>
         <a href="/ContactUs" class="btn btn-outline-brand ms-sm-2">Get In Touch</a>
 
       </div>

@@ -12,8 +12,7 @@
       /* border: 2px solid white; */
       height: 40rem;
       /* background-image: url('{{ asset('assets/img/dd.jpg') }}'); */
-background: linear-gradient(to right,#1B1F34 ,rgba(27 , 31 , 52 , 0.0)) ,url('{{ asset('assets/img/dd.jpg') }}');
-
+      background: linear-gradient(to right,#1B1F34 ,rgba(27 , 31 , 52 , 0.0)) ,url('{{ asset('assets/img/dd.jpg') }}');
       background-position: center;
       background-size: cover;
       
@@ -31,7 +30,7 @@ background: linear-gradient(to right,#1B1F34 ,rgba(27 , 31 , 52 , 0.0)) ,url('{{
   </nav>
 
 </header> --}}
-  <a href="/" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a> 
+<a href="/homepage" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a> 
 
   <div class="cont">
 

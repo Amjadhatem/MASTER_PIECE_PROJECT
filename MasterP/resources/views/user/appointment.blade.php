@@ -6,22 +6,68 @@
 @endsection
   
 
-{{-- ------------------------------------ Nav ------------------------------------ --}}
+{{-- ------------------------------------ SlideShow ------------------------------------ --}}
 
 <header>
+
+ 
   <a href="/homepage" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a> 
+    <div class="slideshow-container">
+      <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointement1.jpg') }}'); "></div>
+      <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment2.jpg') }}"></div>
+      <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment3.jpg') }}"></div>
+      <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment4.jpg') }}"></div>
+      <!-- Add more slides as needed -->
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+     </div>
 
 </header>
 
-{{-- ------------------------------------ Nav ------------------------------------ --}}
+{{-- ------------------------------------ SlideShow ------------------------------------ --}}
 
   <!-- -------------------content------------------- --> 
 
   @section('content')
 
+
+  <!-- ---------------------Table Section--------------------- -->
+<section id="reserved-hours">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 mx-auto">
+              <h2>Reserved Hours</h2>
+              <hr><br>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Date</th>
+                          <th>Hour</th>
+                          <th>Barber</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($reservedTimes as $day)
+                    @foreach ($day['hours'] as $hour)
+                        <tr>
+                            <td>{{ $day['date'] }}</td>
+                            <td>{{ $hour['formattedTime'] }}</td>
+                            <td>{{ $hour['barberName'] }}</td>
+                        </tr>
+                    @endforeach
+                @endforeach
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- ---------------------Table Section--------------------- -->
+
+
   <!-- ---------------------Booking--------------------- -->
       
-
+  
   <section id="booking">
     <div class="container">
       <div class="row">
@@ -68,6 +114,8 @@
                   @endfor
               </select>
           </div>
+          
+          
             <div class="form-group col-12">
               <select name="barber_id" id="barberSelect" class="form-control" placeholder="barber_id">
                 <option disabled selected>Select Barber</option>
@@ -90,6 +138,8 @@
   </section>
 
   <!-- ---------------------Booking--------------------- -->
+ 
+
 
   @endsection
 

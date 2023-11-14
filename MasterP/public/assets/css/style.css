@@ -369,6 +369,7 @@ background-color: var(--bg2);;
 #booking form{
     background-color: var(--bg1);
     padding: 32px;
+    opacity: .9;
 }
 
 #booking form .form-control{
@@ -388,6 +389,67 @@ background-color: var(--bg2);;
     box-shadow: none;
     border-left-color:var(--brand);
 }
+
+#appointmentHour{
+    width: 49.5rem;
+    height: 58px;
+}
+
+#barberSelect{
+    width: 49.5rem;
+    height: 58px;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    opacity: .6;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: .6;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+tr{
+    color: var(--brand);
+}
+td{
+    color: rgb(166, 165, 165) ;
+}
+
 
 
 /* ----------------------------------------------  /Booking  ---------------------------------------------- */
