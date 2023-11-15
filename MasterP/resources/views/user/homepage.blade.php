@@ -64,7 +64,7 @@
         <div class="col-lg-6">
           <h1 class="display-3">Let your hair do the talking </h1>
           <p>"Welcome to [A.1 BarberShop], where style meets precision. Step into our world of expert barbers, creating personalized looks that redefine your confidence with every cut."</p>
-          <a href="{{ route('book.appointment') }}" class="btn btn-brand">Book Now</a>
+          <a href="{{ route('Rese.appointment') }}" class="btn btn-brand">Book Now</a>
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@
 
       </div>
       <div class="cta-btns">
-        <a href="{{ route('book.appointment') }}" class="btn btn-brand me-sm-2">Appointment</a>
+        <a href="{{ route('Rese.appointment') }}" class="btn btn-brand me-sm-2">Appointment</a>
         <a href="/ContactUs" class="btn btn-outline-brand ms-sm-2">Get In Touch</a>
 
       </div>

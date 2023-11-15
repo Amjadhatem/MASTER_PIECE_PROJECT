@@ -51,7 +51,7 @@ class ServicesController extends Controller
             'service_bio' => $request->input('service_bio'),
             'service_description' => $request->input('service_description'),
         ]);
-
+        
 
         return redirect(route('services'))->with('success', 'service added successfully');
 

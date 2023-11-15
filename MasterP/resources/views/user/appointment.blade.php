@@ -30,39 +30,37 @@
 
   @section('content')
 
-
-  <!-- ---------------------Table Section--------------------- -->
-<section id="reserved-hours">
+<!-- Display reserved times section -->
+<section id="reservedTimes">
   <div class="container">
       <div class="row">
           <div class="col-lg-8 mx-auto">
-              <h2>Reserved Hours</h2>
-              <hr><br>
+              <h2>Reserved Times</h2>
               <table class="table">
                   <thead>
                       <tr>
                           <th>Date</th>
-                          <th>Hour</th>
+                          <th>Time</th>
                           <th>Barber</th>
                       </tr>
                   </thead>
                   <tbody>
-                    @foreach ($reservedTimes as $day)
-                    @foreach ($day['hours'] as $hour)
-                        <tr>
-                            <td>{{ $day['date'] }}</td>
-                            <td>{{ $hour['formattedTime'] }}</td>
-                            <td>{{ $hour['barberName'] }}</td>
-                        </tr>
-                    @endforeach
-                @endforeach
+                      @foreach($reservedTimes as $day)
+                          @foreach($day['hours'] as $reservedTime)
+                              <tr>
+                                  <td>{{ $day['date'] }}</td>
+                                  <td>{{ $reservedTime['formattedTime'] }}</td>
+                                  <td>{{ $reservedTime['barberName'] }}</td>
+                              </tr>
+                          @endforeach
+                      @endforeach
                   </tbody>
               </table>
           </div>
       </div>
   </div>
 </section>
-<!-- ---------------------Table Section--------------------- -->
+<!-- End of reserved times section -->
 
 
   <!-- ---------------------Booking--------------------- -->
@@ -82,7 +80,7 @@
                             </ul>
                         </div>
                     @endif
-          <form action="{{ route('reservations.store') }}" method="post" class="row">
+          <form action="{{ route('Rese.store') }}" method="post" class="row">
             @csrf
             <div class="col-12 mb-4">
             <h1>Book Appointment</h1>

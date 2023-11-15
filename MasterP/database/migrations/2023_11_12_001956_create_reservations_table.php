@@ -17,11 +17,12 @@ return new class extends Migration
             $table->string('phone_number');
             $table->date('date');
             $table->string('time');
-            $table->foreignId('barber_id')->constrained('Barbers');
+            $table->foreignId('barber_id')->constrained('barbers');
             $table->text('additional_information')->nullable();
             $table->timestamps();
 
-            $table->unique(['date', 'time']);
+            $table->unique(['date', 'time', 'barber_id']);
+            $table->index('barber_id');
 
 
             // $table->foreign('barbers_id')->references('id')->on('barbers')->onDelete('cascade');

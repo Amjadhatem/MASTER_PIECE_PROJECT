@@ -127,8 +127,12 @@ use App\Http\Controllers\ReservationController;
     
     Route::controller(ReservationController::class)->prefix('Rese')->group(function () {
         Route::get('/Reservation', 'index')->name('Rese');
-        Route::get('create', 'create')->name('book.appointment');
-        Route::post('store', 'store')->name('reservations.store');
+        Route::get('create', 'create')->name('Rese.appointment');
+        Route::post('store', 'store')->name('Rese.store');
+        Route::get('show/{id}', 'show')->name('Rese.show');
+        Route::get('edit/{id}', 'edit')->name('Rese.edit');
+        Route::put('edit/{id}', 'update')->name('Rese.update');
+        Route::delete('destroy/{id}', 'destroy')->name('Rese.destroy');
     });
     // Route::get('/appointment', [ReservationController::class, 'create'])->name('book.appointment');
 
