@@ -8,6 +8,7 @@ use App\Http\Controllers\BarbersController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\Displaydata;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ContactUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -123,7 +124,8 @@ use App\Http\Controllers\ReservationController;
         });
 
 
-    // --------------------------/Auth------------------------
+    // -------------------------------------------------------------------
+
     
     Route::controller(ReservationController::class)->prefix('Rese')->group(function () {
         Route::get('/Reservation', 'index')->name('Rese');
@@ -134,14 +136,29 @@ use App\Http\Controllers\ReservationController;
         Route::put('edit/{id}', 'update')->name('Rese.update');
         Route::delete('destroy/{id}', 'destroy')->name('Rese.destroy');
     });
-    // Route::get('/appointment', [ReservationController::class, 'create'])->name('book.appointment');
 
-// Route for processing the submitted reservation form
-    // Route::post('/book-appointment', [ReservationController::class, 'store'])->name('reservations.store');
+    // -------------------------------------------------------------------
 
+
+    Route::controller(ContactUsController::class)->prefix('con')->group(function () {
+        Route::get('/', 'index')->name('con');
+        // Route::get('create', 'create')->name('con.appointment');
+        Route::post('store', 'store')->name('con.store');
+        Route::get('show/{id}', 'show')->name('con.show');
+        Route::get('edit/{id}', 'edit')->name('con.edit');
+        Route::put('edit/{id}', 'update')->name('con.update');
+        Route::delete('destroy/{id}', 'destroy')->name('con.destroy');
+    });
+
+    // --------------------------/Auth------------------------
+    
     Route::get('/success', function () {
         return view('user.success');
     })->name('success.page');
+
+    Route::get('/successContact', function () {
+        return view('user.successContact');
+    })->name('successCon.page');
     
 });
 

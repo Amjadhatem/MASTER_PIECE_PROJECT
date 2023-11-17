@@ -17,6 +17,7 @@
       <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment2.jpg') }}"></div>
       <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment3.jpg') }}"></div>
       <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment4.jpg') }}"></div>
+      <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment5.jpg') }}"></div>
       <!-- Add more slides as needed -->
       <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
       <a class="next" onclick="changeSlide(1)">&#10095;</a>

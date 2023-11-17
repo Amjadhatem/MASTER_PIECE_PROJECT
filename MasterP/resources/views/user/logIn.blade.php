@@ -30,7 +30,7 @@
   </nav>
 
 </header> --}}
-<a href="/homepage" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a> 
+<a href="/" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a> 
 
   <div class="cont">
 

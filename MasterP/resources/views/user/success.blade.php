@@ -1,64 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Page</title>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+
+  </head>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(to right,rgba(27, 31, 52, 0.8), rgba(27, 31, 52, 0.8)), url({{ asset('assets/img/success.jpg') }});
-            background-size:cover;
-            background-position: center;
-        }
+      body {
+        text-align: center;
+        padding: 40px 0;
+        background: linear-gradient(to right,#0d1122 ,rgba(20, 21, 26, 0)) ,url('{{ asset('assets/img/succs.jpg') }}');
+        background-position: center;
+        background-size: cover;
+          }
 
-        .success-container {
-            text-align: center;
-            padding: 20px;
-            border-radius: 8px;
-            background-color:rgba(27, 31, 52, 0.8);
-            color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 2px solid rgb(187, 187, 187);
-            font-size: 25px;
-            opacity: .8;
+        h1 {
+          color: #ffffff;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-weight: 900;
+          font-size: 40px;
+          margin-bottom: 10px;
         }
-
-        .success-container:hover{
-            border: 2px solid white;
-            transition: all .5s;
-            
+        p {
+          color: #ffffff;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-size:20px;
+          margin: 0;
         }
-        
-        #hhh:hover{
-          transform: translateX(8px);
-          transition: all.4s ease;
-          /* padding-left: 1rem; */
-          padding-right: 1.4rem;
-          width: 8rem;
-          transition: all .5s;
-          cursor: pointer;
-        }
+      i {
+        color: green;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left:-15px;
+      }
+      .card {
+        background: none;
+        padding: 60px;
+        border-radius: 4px;
+        /* box-shadow: 0 2px 3px #C8D0D8; */
+        border: 1px solid rgb(99, 99, 99);
+        display: inline-block;
+        margin: 0 auto;
+        opacity: .9;
+      }
     </style>
-</head>
-<body>
+    <body>
 
-    <header>
-        <a href="{{ route('homepage') }}" id="hhh"><img src="{{ asset('assets/img/logo.png') }}" style="width: 6rem"  alt="logo"></a> 
-
-    </header>
-    <div id="succ">
-
-    <div class="success-container">
-        <h1>Success!</h1>
-        <p>Your action was successful.</p>
-    </div>
-
-    </div>
-</body>
+        <header>
+            <a href="{{ route('homepage') }}" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt="logo"></a>         </header>
+        <br>
+      <div class="card">
+      <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+        <i class="checkmark">✓</i>
+      </div>
+        <h1>Success</h1> 
+        <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+      </div>
+    </body>
 </html>

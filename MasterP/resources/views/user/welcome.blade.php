@@ -80,7 +80,7 @@
           <h3>About Us</h3>
           <h1>About Amjad Salon</h1>
           <p>"At A.1 BarberShop, we are more than just a barbershop — we're a haven for style and self-expression. With a team of skilled artisans passionate about their craft, we strive to create an inclusive space where every haircut is a masterpiece, and every client leaves feeling confident and refreshed. Discover the artistry, precision, and warmth that define the essence of A.1 BarberShop."</p>
-          <img class="signature" src="./img/signature.png" alt="">
+          <img class="signature" src="{{ asset('assets/img/signature.png') }}" alt="AboutUs">
 
         </div>
       </div>

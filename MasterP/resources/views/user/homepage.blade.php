@@ -86,7 +86,7 @@
           <h3>About Us</h3>
           <h1>About A.1 BarberShop</h1>
           <p>"At A.1 BarberShop, we are more than just a barbershop — we're a haven for style and self-expression. With a team of skilled artisans passionate about their craft, we strive to create an inclusive space where every haircut is a masterpiece, and every client leaves feeling confident and refreshed. Discover the artistry, precision, and warmth that define the essence of A.1 BarberShop."</p>
-          <img class="signature" src="./img/signature.png" alt="AboutUs">
+          <img class="signature" src="{{ asset('assets/img/signature.png') }}" alt="AboutUs">
 
         </div>
       </div>
@@ -150,84 +150,95 @@
         <div class="col-12 intro  text-center">
           <h3>Features</h3>
           <h1>Why We Are Awesome</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+          <p>Our website not only simplifies the booking process but also enhances your overall salon experience. To give you a sneak peek into the magic we offer</p>
         </div>
       </div>
       <div class="row gy-5">
         <div class="col-lg-4 col-sm-6">
           <div class="feature">
-            <div class="icon-feature"><i class="bi bi-vector-pen"></i></div>
+            <div class="icon-feature"><i class="fa-solid fa-globe" style="color: #cae30d;"></i></div>
           <div>
-          <h3 class="h5">Service Title</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+          <h3 class="h5">Online Reservation</h3>
+          <p>Empower clients with the convenience of our user-friendly online reservation system. Booking appointments is a breeze as customers navigate through a seamless interface, allowing them to select preferred dates, times,
+          </p>
           <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i></a>
           <div class="hidden-content">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis dignissimos architecto totam. Sint eum quae placeat ullam assumenda. Natus quas maxime ipsum consequuntur, quod inventore a ad facere? Rerum, facere?</p>
+            <p>Step into the future of convenience with our seamless online reservation system. Booking your next appointment has never been easier. Navigate through our user-friendly platform to select your preferred date, time, and specific services tailored to your unique needs. Say goodbye to waiting on hold or adjusting your schedule to fit salon hours—take control of your time and style effortlessly, all at the click of a button. Welcome to a world where booking beauty is as simple as a few clicks.</p>
           </div>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-sm-6">
         <div class="feature">
-          <div class="icon-feature"><i class="bi bi-fire"></i></div>
+          <div class="icon-feature"><i class="fa-solid fa-wifi" style="color: #cae30d;"></i></div>
         <div>
-        <h3 class="h5">Service Title</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+        <h3 class="h5">Wi-Fi Service</h3>
+        <p>Elevate the salon experience by providing complimentary Wi-Fi access. Clients can stay connected to their virtual world, whether catching up on work, socializing online, or simply enjoying entertainment during their visit.
+        </p>
         <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i></a>
         <div class="hidden-content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur itaque vel, voluptate illo sapiente expedita ipsam ut repellat quod animi, optio enim ullam tenetur corrupti aliquam maiores earum tempore magnam!</p>
+          <p>Immerse yourself in the ultimate blend of style and connectivity with our complimentary Wi-Fi service. As you step into our salon, stay seamlessly connected to your virtual world. Whether you're catching up on work, sharing your fresh look on social media, or simply enjoying online entertainment, our high-speed Wi-Fi ensures you're always connected. We believe that every moment in the chair should be as enjoyable and connected as you want it to be. Welcome to a space where staying in the loop is as much a part of the experience as your stylish new look.
+          </p>
         </div>
         </div>
       </div>
     </div>
     <div class="col-lg-4 col-sm-6">
       <div class="feature">
-        <div class="icon-feature"><i class="bi bi-people-fill"></i></div>
+        <div class="icon-feature"><i class="fa-solid fa-broom style="color: #cae30d;"></i></div>
       <div>
-      <h3 class="h5">Service Title</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+      <h3 class="h5">High-Level Cleanliness</h3>
+      <p>Experience the pinnacle of cleanliness and hygiene in our salon. Our commitment to maintaining a spotless environment ensures that clients feel not only pampered but also secure in the knowledge that their well-being is our top priority.
+      </p>
       <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i></a>
       <div class="hidden-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ut hic placeat earum voluptatum dolores voluptate culpa, eius aliquid libero aperiam laborum repellat? Esse delectus officiis maxime explicabo suscipit excepturi!</p>
+        <p>Immerse yourself in an environment where cleanliness is not just a standard but a commitment to your well-being. Our salon takes pride in maintaining a high-level of cleanliness, ensuring that every corner radiates freshness and hygiene. Our rigorous cleaning standards go beyond expectations to create a sanctuary of purity. From sterilized tools to pristine workspaces, we prioritize your safety and comfort. Rest assured that your journey in our salon is not only a transformation of style but also a retreat into a space where cleanliness is paramount. Welcome to a haven where every detail is polished, and every visit assures you of a sparkling, immaculate experience.
+  </p>
       </div>
       </div>
     </div>
   </div>
   <div class="col-lg-4 col-sm-6">
     <div class="feature">
-      <div class="icon-feature"><i class="bi bi-heart-fill"></i></div>
+      <div class="icon-feature"><i class="fa-solid fa-mug-saucer" style="color: #cae30d;"></i></div>
     <div>
-    <h3 class="h5">Service Title</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+    <h3 class="h5">Café Services</h3>
+    <p>Transform the salon into a haven of hospitality with our in-house café services. Clients are welcomed to indulge in a complimentary beverage, enhancing their overall relaxation and comfort while enjoying the ambiance of our salon.
+    </p>
     <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i></a>
     <div class="hidden-content">
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae nihil voluptatibus itaque asperiores nesciunt, aspernatur, pariatur ex ipsum reprehenderit veniam molestias suscipit natus excepturi rerum assumenda quam neque, vitae amet.</p>
+      <p>Savor the essence of indulgence as you embark on a sensory journey with our exclusive café services. Nestled within our salon, our café is a haven for relaxation and delight. Immerse yourself in the rich aroma of freshly brewed beverages as you sip on complimentary drinks, curated to complement your salon experience. Our café is more than a corner for refreshments; it's a retreat where you can unwind, socialize, and enhance your overall sense of well-being. Step into a realm where the artistry of styling meets the artistry of flavor, creating a truly bespoke experience for each client. Welcome to a world where every sip is as memorable as every strand of your new hairstyle.
+   </p>
     </div>
     </div>
   </div>
 </div>
 <div class="col-lg-4 col-sm-6">
   <div class="feature">
-    <div class="icon-feature"><i class="bi bi-wifi"></i></div>
+    <div class="icon-feature"><i class="fa-solid fa-tv" style="color: #cae30d;"></i></div>
   <div>
-  <h3 class="h5">Service Title</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+  <h3 class="h5"> Entertainment Options</h3>
+  <p>Immerse clients in a delightful experience with our entertainment options. Whether it's catching up on the latest shows or enjoying a movie, our facilities ensure that clients are engaged and entertained throughout their visit.
+  </p>
   <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i></a>
   <div class="hidden-content">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum non ex laboriosam laborum maxime odit quaerat nobis, totam mollitia culpa similique aut! Corrupti doloribus praesentium quos nobis illo esse delectus.</p>
+    <p>Elevate your salon experience with our curated entertainment options, designed to turn your visit into a delightful escape. While you await your transformation or indulge in one of our services, immerse yourself in a world of visual delight. Our salon offers television and movie-watching facilities, allowing you to catch up on the latest shows or enjoy a cinematic experience. From the latest trends in hairstyling to the most captivating storylines on screen, we ensure that every moment in our salon is as entertaining as it is stylish. Welcome to a space where relaxation and style seamlessly converge, creating an experience that caters to both your visual and aesthetic senses.
+  </p>
   </div>
   </div>
 </div>
 </div>
 <div class="col-lg-4 col-sm-6">
   <div class="feature">
-    <div class="icon-feature"><i class="bi bi-headphones"></i></div>
+    <div class="icon-feature"><i class="fa-solid fa-user-tie" style="color:#cae30d;"></i></div>
   <div>
-  <h3 class="h5">Service Title</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet debitis aliquam necessitatibus</p>
+  <h3 class="h5">Professional Barber Team</h3>
+  <p>Entrust your style to our highly skilled and professional barber team. Our experts bring a wealth of experience and expertise to each client, ensuring precision, creativity, and satisfaction with every haircut and styling session.
+  </p>
   <a href="#" class="link-more">Know More <i class="bi bi-arrow-right"></i></a>
   <div class="hidden-content">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis unde a ab excepturi illo blanditiis fuga accusamus, qui non dolorem, saepe ullam, repellat minima vitae eaque earum! Aperiam, autem!</p>
+    <p>Entrust your style evolution to the expertise of our dedicated and highly skilled professional barber team. Our artisans of style bring not only a wealth of experience but also an unwavering commitment to craftsmanship. Each member of our team is a maestro in the art of hair care, blending creativity with precision to sculpt hairstyles that reflect your unique personality. From classic cuts to avant-garde designs, our barbers are not just stylists; they are architects of confidence and trendsetters in the world of fashion. Step into the chair with the assurance that you are in the capable hands of professionals who understand the language of your hair. Welcome to a salon where every snip is a stroke of artistry, and every visit is an experience tailored just for you.
+</p>
   </div>
   </div>
 </div>
