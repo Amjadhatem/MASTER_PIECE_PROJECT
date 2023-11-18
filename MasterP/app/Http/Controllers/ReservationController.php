@@ -97,6 +97,9 @@ class ReservationController extends Controller
             return redirect()->back()->with(['errorMessage' => $errorMessage]);
         }
     }
+
+    // * Helper function to get reserved hours for the next 7 days.
+
     public function getReservedHours()
     {
         $reservedHours = [];
@@ -107,8 +110,9 @@ class ReservationController extends Controller
     
             $hours = [];
     
-            foreach ($reservedTimes as $reservation) {
-                $formattedTime = ($reservation->time <= 12) ? $reservation->time . ' AM' : ($reservation->time - 12) . ' PM';
+               // Loop through reserved times for each day
+                foreach ($reservedTimes as $reservation) {
+                    $formattedTime = ($reservation->time <= 12) ? $reservation->time . ' AM' : ($reservation->time - 12) . ' PM';
     
                 // Add reserved hours to the array
                 $hours[] = [

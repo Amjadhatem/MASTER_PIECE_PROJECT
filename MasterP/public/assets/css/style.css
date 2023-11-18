@@ -450,6 +450,100 @@ td{
     color: rgb(166, 165, 165) ;
 }
 
+@media screen and (max-width: 768px) {
+    .slideshow-container {
+        display: none;
+    }
+
+    
+    #reservedTimes{
+        width: 100%;
+        margin-top: 4rem;
+        margin-left: 2rem;
+        /* border: 2px solid white; */
+
+    }
+
+    #booking{
+        width: 100%;
+        /* border: 2px solid white; */
+    }
+   
+    #appointmentHour{
+        width: 28.2rem;
+    }
+    #barberSelect{
+        width: 28.2rem;
+    } 
+    
+}
+
+@media screen and (min-width: 375px) and (max-width: 667px) {
+
+  
+    #reservedTimes{
+        /* border: 2px solid white; */
+        width: 160%;
+        margin-top: 7rem;
+    }
+
+    #booking{
+        width: 170%;
+        margin-left: 1rem;
+        /* border: 2px solid white; */
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    #appointmentHour{
+        width: 20rem;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    #appointmentHour{
+        width: 39.5rem;
+    }
+    #barberSelect{
+        width: 39.5rem;
+    }
+}
+
+
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+
+    #appointmentHour{
+        width: 39.5rem;
+    }
+    #barberSelect{
+        width: 39.5rem;
+
+    }
+}
+
+@media screen and (min-width: 912px) and (max-width: 1368px) {
+
+    #appointmentHour{
+        width: 39.5rem;
+    }
+    #barberSelect{
+        width: 39.5rem;
+
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+
+    #appointmentHour{
+        width: 34.5rem;
+    }
+    #barberSelect{
+        width: 34.5rem;
+
+    }
+}
+
 
 
 /* ----------------------------------------------  /Booking  ---------------------------------------------- */

@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+  <link rel="icon" href="{{ asset('assets/img/logo.png') }}" type="image/png">
+
   <style>
     body{
       /* border: 2px solid white; */

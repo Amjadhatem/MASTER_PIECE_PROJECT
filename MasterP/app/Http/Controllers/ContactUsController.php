@@ -50,7 +50,7 @@ class ContactUsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ContactUs $contactUs)
+    public function show(string $contactUs)
     {
         $con = ContactUs::findOrFail($contactUs);
   
@@ -60,7 +60,7 @@ class ContactUsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ContactUs $contactUs)
+    public function edit(string $contactUs)
     {
         $con = ContactUs::findOrFail($contactUs);
   
@@ -70,7 +70,7 @@ class ContactUsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ContactUs $contactUs)
+    public function update(Request $request, string $contactUs)
     {
         $con = ContactUs::findOrFail($contactUs);
   
@@ -82,12 +82,12 @@ class ContactUsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ContactUs $contactUs)
+    public function destroy(string $contactUs)
     {
         $con = ContactUs::findOrFail($contactUs);
   
         $con->delete();
   
-        return redirect(route('Rese'))->with('success', 'reservation deleted successfully');
+        return redirect(route('con'))->with('success', 'reservation deleted successfully');
     }
 }

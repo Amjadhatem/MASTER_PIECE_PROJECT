@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Team page
+    Appointment Page
 @endsection
   
 
@@ -11,11 +11,11 @@
 <header>
 
  
-  <a href="/homepage" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt=""></a> 
+  <a href="/homepage" id="a_back"><img src="{{ asset('assets/img/logo.png') }}" style="width: 4.9rem "  alt="Logo"></a> 
     <div class="slideshow-container">
       <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointement1.jpg') }}'); "></div>
       <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment2.jpg') }}"></div>
-      <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment3.jpg') }}"></div>
+      {{-- <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment3.jpg') }}"></div> --}}
       <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment4.jpg') }}"></div>
       <div class="slide fade" style="background-image: url('{{ asset('assets/img/appointment5.jpg') }}"></div>
       <!-- Add more slides as needed -->
@@ -98,7 +98,7 @@
             </div>
             <div class="form-group col-6">
               <select name="time" id="appointmentHour" class="form-control">
-                  @for ($i = 1; $i <= 12; $i++)
+                  @for ($i = 6; $i <= 12; $i++)
                       @php $time = $i; $formattedTime = $i.' AM'; @endphp
                       @if (!in_array($time, $reservedTimes))
                           <option value="{{ $time }}">{{ $formattedTime }}</option>
@@ -145,5 +145,3 @@
 
   <!-- -------------------content------------------- --> 
 
-</body>
-</html>

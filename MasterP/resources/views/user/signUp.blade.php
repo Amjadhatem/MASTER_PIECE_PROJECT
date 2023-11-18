@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
-  <title>Document</title>
+  <title>Signup Page</title>
+  <link rel="icon" href="{{ asset('assets/img/logo.png') }}" type="image/png">
+
 
   <style>
     body{

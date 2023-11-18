@@ -156,7 +156,7 @@
       <div class="row gy-5">
         <div class="col-lg-4 col-sm-6">
           <div class="feature">
-            <div class="icon-feature"><i class="fa-solid fa-globe" style="color: #cae30d;"></i></div>
+            <div class="icon-feature"><i class="fa-solid fa-globe" style="color: #FFAB76;"></i></div>
           <div>
           <h3 class="h5">Online Reservation</h3>
           <p>Empower clients with the convenience of our user-friendly online reservation system. Booking appointments is a breeze as customers navigate through a seamless interface, allowing them to select preferred dates, times,
@@ -170,7 +170,7 @@
       </div>
       <div class="col-lg-4 col-sm-6">
         <div class="feature">
-          <div class="icon-feature"><i class="fa-solid fa-wifi" style="color: #cae30d;"></i></div>
+          <div class="icon-feature"><i class="fa-solid fa-wifi" style="color: #FFAB76;"></i></div>
         <div>
         <h3 class="h5">Wi-Fi Service</h3>
         <p>Elevate the salon experience by providing complimentary Wi-Fi access. Clients can stay connected to their virtual world, whether catching up on work, socializing online, or simply enjoying entertainment during their visit.
@@ -185,7 +185,7 @@
     </div>
     <div class="col-lg-4 col-sm-6">
       <div class="feature">
-        <div class="icon-feature"><i class="fa-solid fa-broom style="color: #cae30d;"></i></div>
+        <div class="icon-feature"><i class="fa-solid fa-broom" style="color: #FFAB76;"></i></div>
       <div>
       <h3 class="h5">High-Level Cleanliness</h3>
       <p>Experience the pinnacle of cleanliness and hygiene in our salon. Our commitment to maintaining a spotless environment ensures that clients feel not only pampered but also secure in the knowledge that their well-being is our top priority.
@@ -200,7 +200,7 @@
   </div>
   <div class="col-lg-4 col-sm-6">
     <div class="feature">
-      <div class="icon-feature"><i class="fa-solid fa-mug-saucer" style="color: #cae30d;"></i></div>
+      <div class="icon-feature"><i class="fa-solid fa-mug-saucer" style="color: #FFAB76;"></i></div>
     <div>
     <h3 class="h5">Café Services</h3>
     <p>Transform the salon into a haven of hospitality with our in-house café services. Clients are welcomed to indulge in a complimentary beverage, enhancing their overall relaxation and comfort while enjoying the ambiance of our salon.
@@ -215,7 +215,7 @@
 </div>
 <div class="col-lg-4 col-sm-6">
   <div class="feature">
-    <div class="icon-feature"><i class="fa-solid fa-tv" style="color: #cae30d;"></i></div>
+    <div class="icon-feature"><i class="fa-solid fa-tv" style="color: #FFAB76;"></i></div>
   <div>
   <h3 class="h5"> Entertainment Options</h3>
   <p>Immerse clients in a delightful experience with our entertainment options. Whether it's catching up on the latest shows or enjoying a movie, our facilities ensure that clients are engaged and entertained throughout their visit.
@@ -230,7 +230,7 @@
 </div>
 <div class="col-lg-4 col-sm-6">
   <div class="feature">
-    <div class="icon-feature"><i class="fa-solid fa-user-tie" style="color:#cae30d;"></i></div>
+    <div class="icon-feature"><i class="fa-solid fa-user-tie" style="color:#FFAB76;"></i></div>
   <div>
   <h3 class="h5">Professional Barber Team</h3>
   <p>Entrust your style to our highly skilled and professional barber team. Our experts bring a wealth of experience and expertise to each client, ensuring precision, creativity, and satisfaction with every haircut and styling session.

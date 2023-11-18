@@ -14,6 +14,14 @@
   <!-- Nav Item - Dashboard -->
 
   <li class="nav-item">
+    <a class="nav-link" href="{{ route('dashboard') }}">
+      <i class="fa-solid fa-calendar" style="color: #ffffff;"></i>
+      <span>Calendar</span></a>
+  </li>
+
+  <hr class="sidebar-divider my-0">
+
+  <li class="nav-item">
     <a class="nav-link" href="/profile">
       <i class="fa-solid fa-user" style="color: #ffffff;"></i>
       <span>Profile</span></a>
