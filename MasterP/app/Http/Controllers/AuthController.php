@@ -11,16 +11,16 @@ use Illuminate\Validation\ValidationException;
   
 class AuthController extends Controller
 {
+
+    // Show registration form
+
     public function register()
     {
         return view('user/signUp');
     }
 
-    // public function displayhome()
-    // {
-    //     return view('user/homepage');
-    // }
-  
+
+    // Save user registration data
 
     public function registerSave(Request $request)
     {
@@ -45,12 +45,15 @@ class AuthController extends Controller
     }
   
 
+    // Show login form
+
     public function login()
     {
         return view('user/logIn');
     }
 
-  
+    // Perform login action
+
     public function loginAction(Request $request)
     {
         Validator::make($request->all(), [
@@ -58,6 +61,8 @@ class AuthController extends Controller
             'password' => 'required'
         ])->validate();
   
+        // Attempt to authenticate the user
+
         if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed')
@@ -80,15 +85,6 @@ class AuthController extends Controller
         }
     }
   
-
-    // public function logout(Request $request)
-    // {
-    //     Auth::guard('web')->logout();
-  
-    //     $request->session()->invalidate();
-  
-    //     return redirect('login');
-    // }
  
     public function profile()
     {
@@ -102,6 +98,7 @@ class AuthController extends Controller
         }
         }
 
+         // Update the user's profile
     public function updateProfile(Request $request)
 {
     $user = auth()->user();
@@ -126,6 +123,8 @@ class AuthController extends Controller
 }
 
 
+// Display a listing of all users
+
     public function index()
     {
         $users = User::orderBy('created_at', 'DESC')->get();
@@ -133,12 +132,16 @@ class AuthController extends Controller
         return view('crud_users.index' , compact('users'));
     }
     
+    // Display the specified user
+
     public function show(string $id)
     {
         $users = User::findOrFail($id);
   
         return view('crud_users.show', compact('users'));
     }
+
+    // Display the form for editing the specified user
 
     public function edit(string $id)
     {
@@ -147,9 +150,8 @@ class AuthController extends Controller
         return view('crud_users.edit', compact('users'));
     }
   
-    /**
-     * Update the specified resource in storage.
-     */
+   // Update the specified user in storage
+
     public function update(Request $request, string $id)
     {
         $users = User::findOrFail($id);
@@ -159,6 +161,8 @@ class AuthController extends Controller
         return redirect(route('users'))->with('success', 'product updated successfully');
     }
 
+    // Remove the specified user from storage
+    
     public function destroy(string $id)
     {
         $users = User::findOrFail($id);

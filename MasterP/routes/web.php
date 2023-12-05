@@ -30,10 +30,14 @@ use App\Http\Controllers\ContactUsController;
     Route::get('/ContactUs', function () {
         return view('user.ContactUs');
     });
+
+    Route::get('/location', function () {
+        return view('location');
+    });
     
     ////////////////////////////////////////////////
     
-    Route::get('/profile', function () {
+    Route::get('/adminprofile', function () {
         return view('adminprofile');
     });
     
@@ -49,7 +53,7 @@ use App\Http\Controllers\ContactUsController;
     
     
     
-    // --------------------------Auth------------------------
+    // ----------------------------------------------------Auth----------------------------------------------------
     
     Route::controller(AuthController::class)->group(function () {
         Route::get('register', 'register')->name('register');
@@ -84,6 +88,8 @@ use App\Http\Controllers\ContactUsController;
 
         // -----------------------------------
 
+    // ------------------------------Services-------------------------------------
+
     
             Route::controller(ServicesController::class)->prefix('services')->group(function () {
                 Route::get('/', 'index')->name('services');
@@ -97,8 +103,10 @@ use App\Http\Controllers\ContactUsController;
 
             });
 
+    // ------------------------------Services-------------------------------------
 
-        // -----------------------------------------------------------------
+
+    // ------------------------------Blogs-------------------------------------
 
         Route::controller(BlogsController::class)->prefix('Blogs')->group(function () {
             Route::get('/', 'index')->name('Blogs');
@@ -110,8 +118,10 @@ use App\Http\Controllers\ContactUsController;
             Route::delete('destroy/{id}', 'destroy')->name('Blogs.destroy');
         });
 
-        // -----------------------------------------------------------------
+    // ------------------------------Blogs-------------------------------------
 
+
+    // ------------------------------Barbers-------------------------------------
 
         Route::controller(BarbersController::class)->prefix('Barbers')->group(function () {
             Route::get('/', 'index')->name('Barbers');
@@ -123,9 +133,11 @@ use App\Http\Controllers\ContactUsController;
             Route::delete('destroy/{id}', 'destroy')->name('Barbers.destroy');
         });
 
+    // ------------------------------Barbers-------------------------------------
 
-    // -------------------------------------------------------------------
 
+
+    // ------------------------------Reservation-------------------------------------
     
     Route::controller(ReservationController::class)->prefix('Rese')->group(function () {
         Route::get('/Reservation', 'index')->name('Rese');
@@ -137,8 +149,11 @@ use App\Http\Controllers\ContactUsController;
         Route::delete('destroy/{id}', 'destroy')->name('Rese.destroy');
     });
 
-    // -------------------------------------------------------------------
+    // ------------------------------Reservation-------------------------------------
 
+
+
+    // ------------------------------Contact Us-------------------------------------
 
     Route::controller(ContactUsController::class)->prefix('con')->group(function () {
         Route::get('/', 'index')->name('con');
@@ -150,7 +165,11 @@ use App\Http\Controllers\ContactUsController;
         Route::delete('destroy/{id}', 'destroy')->name('con.destroy');
     });
 
-    // --------------------------/Auth------------------------
+    // ------------------------------Contact Us-------------------------------------
+
+
+    // ----------------------------------------------------/Auth----------------------------------------------------
+
     
     Route::get('/success', function () {
         return view('user.success');
@@ -163,5 +182,10 @@ use App\Http\Controllers\ContactUsController;
 });
 
 
+    // ------------------------------Display Data-------------------------------------
+
 Route::get('/', [Displaydata::class, 'displayda']);
 Route::get('homepage', [Displaydata::class, 'displayho'])->name('homepage');
+
+    // ------------------------------Display Data-------------------------------------
+

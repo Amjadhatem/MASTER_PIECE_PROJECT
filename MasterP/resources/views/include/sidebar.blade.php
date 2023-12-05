@@ -22,7 +22,7 @@
   <hr class="sidebar-divider my-0">
 
   <li class="nav-item">
-    <a class="nav-link" href="/profile">
+    <a class="nav-link" href="/adminprofile">
       <i class="fa-solid fa-user" style="color: #ffffff;"></i>
       <span>Profile</span></a>
   </li>

@@ -9,29 +9,33 @@ use Carbon\Carbon;
 
 class BlogsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
+
+        // Fetch all blogs and order them by creation date in descending order
+
         $Blog = Blogs::orderBy('created_at', 'DESC')->get();
        
+        // Pass the blog data to the 'blogs.index' view
+
         return view('blogs.index' , compact('Blog'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+   
     public function create()
     {
+
+        // Display the view for creating a new blog
+
         return view('blogs.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
 {
+
+    // Validate the incoming data
     $data = $request->validate([
         'blog_title' => 'required',
         'blog_content' => 'required',
@@ -42,11 +46,15 @@ class BlogsController extends Controller
 
     $imagePath = null; // Initialize the image path variable
 
+    // Handle image upload if an image is provided
+
     if ($request->hasFile('image_path')) {
         $imagePath = $request->file('image_path')->store('images', 'public');
     }
 
     $blogDate = Carbon::parse($data['blog_date']); // Create a Carbon instance for the 'blog_date' field
+
+     // Create a new blog entry with the validated data
 
     $blog = Blogs::create([
         'blog_title' => $data['blog_title'],
@@ -56,42 +64,43 @@ class BlogsController extends Controller
         'complete_content' => $data['complete_content'],
     ]);
 
+    // Redirect to the 'Blogs' route with a success message
+
     return redirect(route('Blogs'))->with('success', 'Service added successfully');
 }
 
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $blogs)
     {
+
+        // Find and retrieve the specified blog entry
+
         $Blog = Blogs::findOrFail($blogs);
   
+        // Pass the blog data to the 'blogs.show' view
+
         return view('blogs.show', compact('Blog'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
     public function edit(string $blogs)
     {
+
+        // Find and retrieve the specified blog entry
+
         $Blog = Blogs::findOrFail($blogs);
   
+        // Pass the blog data to the 'blogs.edit' view
+
         return view('blogs.edit', compact('Blog'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, string $blogs)
     {
-        // $Blog = Blogs::findOrFail($blogs);
-        
-        
-        // $Blog->update($request->all());
-  
-        // return redirect(route('Blogs'))->with('success', 'service updated successfully');
-    
+     
+        // Find and retrieve the specified blog entry
+
         try {
             $Blog = Blogs::findOrFail($request->id);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
@@ -120,20 +129,27 @@ class BlogsController extends Controller
         // Save the changes to the database
         $Blog->update();
     
+        // Redirect to the 'Blogs' route with a success message
+
         return redirect()->route('Blogs')->with('success', 'Blog updated successfully');
     
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(string $blogs)
     {
+
+        // Find and retrieve the specified blog entry
+
         $Blog = Blogs::findOrFail($blogs);
   
+         // Delete the blog entry
+
         $Blog->delete();
   
+        // Redirect to the 'Blogs' route with a success message
+        
         return redirect(route('Blogs'))->with('success', 'service deleted successfully');
     }
     

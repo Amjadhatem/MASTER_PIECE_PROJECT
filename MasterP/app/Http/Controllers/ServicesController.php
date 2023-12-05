@@ -7,29 +7,34 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+   
     public function index()
     {
+
+    //  --- Fetch all services from the database, ordered by creation date --- 
+
         $service = Services::orderBy('created_at', 'DESC')->get();
        
+    //  --- Return the view with the list of services --- 
+
         return view('crud.index' , compact('service'));
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
+
+    //  --- Return the view for creating a new service --- 
         return view('crud.create');
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
+
+        // Validate the incoming request data ---
 
         $data = $request->validate([
             'service_name' => 'required',
@@ -38,13 +43,16 @@ class ServicesController extends Controller
             'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for image uploads
         ]);
 
+        // Check if an image file is present in the request
+
         if ($request->hasFile('image_path')) {
             $imagePath = $request->file('image_path')->store('images', 'public');
         } else {
             $imagePath = null;
         }
 
-        
+        // Create a new service record in the database
+
         $sp = Services::create([
             'service_name' => $request->input('service_name'),
             'image_path' => $imagePath,
@@ -52,41 +60,48 @@ class ServicesController extends Controller
             'service_description' => $request->input('service_description'),
         ]);
         
+         // Redirect to the services index page with a success message
 
         return redirect(route('services'))->with('success', 'service added successfully');
 
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show(string $id)
     {
+        // Find the service with the given ID
+
         $service = Services::findOrFail($id);
   
+        // Return the view with details of the specified service
+
         return view('crud.show', compact('service'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+   
     public function edit(string $id)
     {
+        // Find the service with the given ID for editing
+
         $service = Services::findOrFail($id);
   
+        // Return the view for editing the specified service
+
         return view('crud.edit', compact('service'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)
     {
+        // Find the service with the given ID
+
         $service = Services::findOrFail($request->id);
         
+        // Check if an image file is present in the request
 
         if ($request->hasFile('image_path')) {
-            // dd($request->all());
+
+            // Store the uploaded image in the public 'images' directory
 
             $imagePath = $request->file('image_path')->store('images', 'public');
             
@@ -94,19 +109,19 @@ class ServicesController extends Controller
         }else {
             $imagePath = null;
         }
-        // $service->update($request->all());
-  
-        // return redirect(route('services'))->with('success', 'service updated successfully');
+        
+        // Update other fields of the service
+
         $service->service_name = $request->input('service_name');   
         $service->service_bio = $request->input('service_bio');
         $service->service_description = $request->input('service_description');
-    
-        // Optional: You can add validation for the date here if needed
-    
+        
         // Save the changes to the database
         $service->update();
     
-        return redirect()->route('services')->with('success', 'Blog updated successfully');
+         // Redirect to the services index page with a success message
+
+        return redirect()->route('services')->with('success', 'service updated successfully');
     
     }
 
@@ -115,10 +130,16 @@ class ServicesController extends Controller
      */
     public function destroy(string $id)
     {
+        // Find the service with the given ID for deletion
+
         $service = Services::findOrFail($id);
   
+        // Delete the service record from the database
+
         $service->delete();
   
+        // Redirect to the services index page with a success message
+        
         return redirect(route('services'))->with('success', 'service deleted successfully');
     }
 
